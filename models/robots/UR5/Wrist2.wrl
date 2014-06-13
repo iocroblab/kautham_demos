@@ -9,7 +9,13 @@ DEF root Separator {
         scaleFactor 1000 1000 1000
 
       },
-        
+      
+      RotationXYZ {
+        angle  3.1415927
+	axis Y
+
+      },
+  
       RotationXYZ {
         angle 1.5707964
 
