@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<Problem name="STMP">
+	<Robot robot="obstacles/STMP16/SphereDE.urdf" scale="0.1">
+		<Limits name="X" min="-34.0" max="34.0" />
+		<Limits name="Y" min="-25.3" max="25.3" />
+		<Limits name="Z" min="0.0" max="2.0" />
+		<Limits name="WX" min="0.0" max="1.0" />
+		<Limits name="WY" min="0.0" max="1.0" />
+		<Limits name="WZ" min="0.0" max="1.0" />
+		<Limits name="THETA" min="-360.0" max="360.0" />
+		<Home X="1.0" Y="1.0" Z="0.0" WX="0.0" WY="0.0" WZ="1.0" TH="0.0" />
+	</Robot>
+	<Obstacle obstacle="obstacles/STMP16/cubeDE12.urdf" scale="0.1">
+		<Home TH="0.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="2.7" X="23.0" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/cubeDE11.urdf" scale="0.1">
+		<Home TH="0.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="6.4" X="12.3" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/cubeDE10.urdf" scale="0.1">
+		<Home TH="0.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="6.8" X="21.7" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/cubeDE9.urdf" scale="0.1">
+		<Home TH="0.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="-1.5" X="7.7" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/cubeDE8.urdf" scale="0.1">
+		<Home TH="0.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="-14.1" X="23.4" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/cubeDE7.urdf" scale="0.1">
+		<Home TH="0.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="-14.1" X="15.5" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/cubeDE6.urdf" scale="0.1">
+		<Home TH="45.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="6.3" X="-3.3" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/cubeDE5.urdf" scale="0.1">
+		<Home TH="0.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="-14.4" X="-18.0" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/cubeDE4.urdf" scale="0.1">
+		<Home TH="0.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="5.8" X="-27.6" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/cubeDE3.urdf" scale="0.1">
+		<Home TH="0.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="5.8" X="-15.3" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/cubeDE2.urdf" scale="0.1">
+		<Home TH="0.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="-2.7" X="-11.6" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/cubeDE.urdf" scale="0.1">
+		<Home TH="0.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="14.0" X="-11.0" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/wall.urdf" scale="0.1">
+		<Home TH="0.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="-10.6" X="-18.0" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/wall2.urdf" scale="0.1">
+		<Home TH="0.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="-2.7" X="-3.8" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/wall3.urdf" scale="0.1">
+		<Home TH="0.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="-6.6" X="-11.6" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/wall4.urdf" scale="0.1">
+		<Home TH="90.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="-10.0" X="4.5" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/wall5.urdf" scale="0.1">
+		<Home TH="0.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="-13.8" X="8.3" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/wall6.urdf" scale="0.1">
+		<Home TH="90.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="-8.0" X="15.6" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/wall7.urdf" scale="0.1">
+		<Home TH="90.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="-2.9" X="-20.8" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/wall8.urdf" scale="0.1">
+		<Home TH="90.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="5.1" X="-11.6" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/wall9.urdf" scale="0.1">
+		<Home TH="0.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="4.5" X="-21.3" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/wall10.urdf" scale="0.1">
+		<Home TH="0.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="-2.6" X="19.0" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/wall11.urdf" scale="0.1">
+		<Home TH="0.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="6.2" X="26.3" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/wall12.urdf" scale="0.1">
+		<Home TH="0.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="6.2" X="16.9" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/wall13.urdf" scale="0.1">
+		<Home TH="90.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="11.7" X="8.2" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/wallb1.urdf" scale="0.3">
+		<Home TH="90.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="0.0" X="30.0" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/wallb2.urdf" scale="0.3">
+		<Home TH="90.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="0.0" X="-32.0" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/wallb3.urdf" scale="0.3">
+		<Home TH="90.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="18.0" X="-1.1" />
+	</Obstacle>
+	<Obstacle obstacle="obstacles/STMP16/wallb4.urdf" scale="0.3">
+		<Home TH="90.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.7" Y="-18.0" X="-1.1" />
+	</Obstacle>
+	
+	<Controls robot="controls/sp.cntr"/>
+	<Planner>
+		<Parameters>
+			<Name>KPIECE2DPlanner</Name>
+			<Parameter name="Constraint Force Mixing">0.3000000119</Parameter>
+			<Parameter name="Control Dimensions">2</Parameter>
+			<Parameter name="Error Reduction Parameter">0.5</Parameter>
+			<Parameter name="Goal Bias">0.05000000075</Parameter>
+			<Parameter name="Max Contacts">3</Parameter>
+			<Parameter name="Max Control Steps">10</Parameter>
+			<Parameter name="Max Planning Time">30</Parameter>
+			<Parameter name="Max Speed">10</Parameter>
+			<Parameter name="Min Control Steps">2</Parameter>
+			<Parameter name="PropagationStepSize">0.07999999821</Parameter>
+			<Parameter name="Speed Factor">5</Parameter>
+			<Parameter name="only final link position?">0</Parameter>
+		</Parameters>
+		<Queries>
+			<Query>
+				<Init dim="3">0.100 0.713</Init>
+				<Goal dim="3">0.269 0.713</Goal>
+			</Query>
+		</Queries>
+	</Planner>
+</Problem>
