@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<ControlSet>
+	<Offset>
+		
+		<DOF name="kuka_lwr_AllegroRH/link1" value="0.500"/>
+		<DOF name="kuka_lwr_AllegroRH/link2" value="0.500"/>
+		<DOF name="kuka_lwr_AllegroRH/link3" value="0.500"/>
+		<DOF name="kuka_lwr_AllegroRH/link4" value="0.500"/>
+		<DOF name="kuka_lwr_AllegroRH/link5" value="0.500"/>
+		<DOF name="kuka_lwr_AllegroRH/link6" value="0.500"/>
+		<DOF name="kuka_lwr_AllegroRH/link7" value="0.500"/>
+
+	
+		
+
+		<DOF name="kuka_lwr_AllegroRH/Index-proximal" value="0.5" />
+		<DOF name="kuka_lwr_AllegroRH/Index-distal" value="0.5" />
+		<DOF name="kuka_lwr_AllegroRH/Index-last" value="0.5" />
+		<DOF name="kuka_lwr_AllegroRH/Medium-base" value="0.5" />
+		<DOF name="kuka_lwr_AllegroRH/Medium-proximal" value="0.5" />
+		<DOF name="kuka_lwr_AllegroRH/Medium-distal" value="0.5" />
+		<DOF name="kuka_lwr_AllegroRH/Medium-last" value="0.5" />
+		<DOF name="kuka_lwr_AllegroRH/Ring-base" value="0.5" />
+		<DOF name="kuka_lwr_AllegroRH/Ring-proximal" value="0.5" />
+		<DOF name="kuka_lwr_AllegroRH/Ring-distal" value="0.5" />
+		<DOF name="kuka_lwr_AllegroRH/Ring-last" value="0.5" />
+		
+
+		
+	</Offset>
+    	
+    	<Control name="link1" eigValue="1">
+      		<DOF name="kuka_lwr_AllegroRH/link1" value="1"/>
+    	</Control>
+    	<Control name="link2" eigValue="1">
+      		<DOF name="kuka_lwr_AllegroRH/link2" value="1"/>
+    	</Control>
+    	<Control name="link3" eigValue="1">
+      		<DOF name="kuka_lwr_AllegroRH/link3" value="1"/>
+    	</Control>
+    	<Control name="link4" eigValue="1">
+      		<DOF name="kuka_lwr_AllegroRH/link4" value="1"/>
+    	</Control>
+    	<Control name="link5" eigValue="1">
+      		<DOF name="kuka_lwr_AllegroRH/link5" value="1"/>
+    	</Control>
+    	<Control name="link6" eigValue="1">
+      		<DOF name="kuka_lwr_AllegroRH/link6" value="1"/>
+    	</Control>
+    	<Control name="link7" eigValue="1">
+      		<DOF name="kuka_lwr_AllegroRH/link7" value="1"/>
+    	</Control>
+	
+  <Control name="I-proximal" eigValue="1">
+    <DOF name="kuka_lwr_AllegroRH/Index-proximal" value="1" />
+  </Control>
+
+  <Control name="I-distal" eigValue="1">
+    <DOF name="kuka_lwr_AllegroRH/Index-distal" value="1" />
+  </Control>
+
+  <Control name="I-last" eigValue="1">
+    <DOF name="kuka_lwr_AllegroRH/Index-last" value="1" />
+  </Control>
+
+  <Control name="R/M-base" eigValue="1">
+    <DOF name="kuka_lwr_AllegroRH/Medium-base" value="1" />
+  </Control>
+
+  <Control name="R/M-proximal" eigValue="1">
+    <DOF name="kuka_lwr_AllegroRH/Medium-proximal" value="1" />
+  </Control>
+
+  <Control name="M-distal" eigValue="1">
+    <DOF name="kuka_lwr_AllegroRH/Medium-distal" value="1" />
+  </Control>
+
+  <Control name="M-last" eigValue="1">
+    <DOF name="kuka_lwr_AllegroRH/Medium-last" value="1" />
+  </Control>
+
+  <Control name="R-base" eigValue="1">
+    <DOF name="kuka_lwr_AllegroRH/Ring-base" value="1" />
+  </Control>
+
+  <Control name="R-proximal" eigValue="1">
+    <DOF name="kuka_lwr_AllegroRH/Ring-proximal" value="1" />
+  </Control>
+
+  <Control name="R-distal" eigValue="1">
+    <DOF name="kuka_lwr_AllegroRH/Ring-distal" value="1" />
+  </Control>
+
+  <Control name="R-last" eigValue="1">
+    <DOF name="kuka_lwr_AllegroRH/Ring-last" value="1" />
+  </Control>
+
+  
+</ControlSet>
