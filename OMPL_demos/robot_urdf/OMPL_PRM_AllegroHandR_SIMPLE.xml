@@ -7,8 +7,8 @@
 		<Limits name="WX" min="0.0" max="1.0" />
 		<Limits name="WY" min="0.0" max="1.0" />
 		<Limits name="WZ" min="0.0" max="1.0" />
-		<Limits name="THETA" min="-180.0" max="180.0" />
-		<Home TH="180.0" WZ="1.0" WY="0.0" WX="0.0" Z="500.0" Y="600" X="-400" />
+		<Limits name="THETA" min="-3.1415926536" max="3.1415926536" />
+		<Home TH="3.1415926536" WZ="1.0" WY="0.0" WX="0.0" Z="500.0" Y="600" X="-400" />
 		<InvKinematic name="TX90" />
 	</Robot>
 	<Controls robot="controls/OMPL_PRM_AllegroHandR_SIMPLE.cntr" />

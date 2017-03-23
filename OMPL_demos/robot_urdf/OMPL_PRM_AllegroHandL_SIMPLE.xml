@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Problem name="" topology="SE3">
 	<Robot robot="robots/AllegroHandL.urdf" scale="1.0">
-		<Home TH="180.0" WZ="1.0" WY="0.0" WX="0.0" Z="500.0" Y="600" X="-400" />
+		<Home TH="3.1415926536" WZ="1.0" WY="0.0" WX="0.0" Z="500.0" Y="600" X="-400" />
 	</Robot>
 	<Planner>
 		<Parameters>

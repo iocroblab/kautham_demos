@@ -3,10 +3,10 @@
 	<Robot robot="robots/bigcube.dh" scale="40">
 		<Limits name="X" min="0" max="100" />
 		<Limits name="Y" min="0" max="100" />
-		<Home TH="0" WZ="1" WY="0" WX="0" Z="0" Y="0" X="0" />
+		<Home TH="0.0" WZ="1" WY="0" WX="0" Z="0" Y="0" X="0" />
 	</Robot>
 	<Obstacle obstacle="obstacles/potential.iv" scale="1">
-		<Home TH="0" WZ="1" WY="0" WX="0" Z="0" Y="0" X="0" />
+		<Home TH="0.0" WZ="1" WY="0" WX="0" Z="0" Y="0" X="0" />
 		<Collision enabled="false"/>
 	</Obstacle>
 	<Controls robot="controls/bigcube_R2.cntr" />
