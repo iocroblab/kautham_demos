@@ -11,7 +11,7 @@ DEF root Separator {
     }
     Separator {
 
-      DEF +0 DrawStyle {
+      DEF _+0 DrawStyle {
         lineWidth 2
 
       }
@@ -26,20 +26,20 @@ DEF root Separator {
         transparency 0
 
       }
-      DEF +1 PickStyle {
+      DEF _+1 PickStyle {
         style UNPICKABLE
 
       }
       Separator {
 
-        DEF +2 Coordinate3 {
+        DEF _+2 Coordinate3 {
           point [ 0 0 0,
-              1 0 0,
-              0 1 0,
-              0 0 1 ]
+              1.0000001e-006 0 0,
+              0 1.0000001e-006 0,
+              0 0 1.0000001e-006 ]
 
         }
-        DEF +3 MaterialBinding {
+        DEF _+3 MaterialBinding {
           value PER_PART
 
         }
@@ -50,13 +50,13 @@ DEF root Separator {
             0 0 0 1
 
         }
-        DEF +4 IndexedLineSet {
+        DEF _+4 IndexedLineSet {
           coordIndex [ 1, 0, 2, -1, 0, 3 ]
 
         }
       }
-      USE +2
-      USE +3
+      USE _+2
+      USE _+3
       MatrixTransform {
         matrix 40 0 0 0
           0 40 0 0
@@ -64,7 +64,7 @@ DEF root Separator {
           0 0 0 1
 
       }
-      USE +4
+      USE _+4
     }
   }
   Separator {
@@ -77,23 +77,23 @@ DEF root Separator {
 
       Separator {
 
-        USE +0
+        USE _+0
         Material {
           diffuseColor 0 0 0.5
           emissiveColor 0 0 0.5
 
         }
-        USE +1
+        USE _+1
         IndexedTriangleStripSet {
           vertexProperty 
           VertexProperty {
-            vertex [ 0 7.999999 34,
-                0 2.0537126e-007 46,
-                7.6084523 2.4721355 34,
-                4.7022815 -6.472136 34,
-                -4.7022829 -6.4721355 34,
-                -7.6084518 2.4721367 34,
-                0 -2.0537126e-007 34 ]
+            vertex [ 0 0.0079999994 0.034000002,
+                0 2.0537128e-010 0.046000004,
+                0.0076084528 0.0024721357 0.034000002,
+                0.0047022817 -0.0064721364 0.034000002,
+                -0.0047022831 -0.0064721359 0.034000002,
+                -0.0076084523 0.0024721369 0.034000002,
+                0 -2.0537128e-010 0.034000002 ]
             normal [ 0 0.83205026 0.55470014,
                 0.79132682 0.25711769 0.55470026,
                 0.48906681 -0.67314291 0.55470026,
@@ -127,23 +127,23 @@ DEF root Separator {
       }
       Separator {
 
-        USE +0
+        USE _+0
         Material {
           diffuseColor 0 0.5 0
           emissiveColor 0 0.5 0
 
         }
-        USE +1
+        USE _+1
         IndexedTriangleStripSet {
           vertexProperty 
           VertexProperty {
-            vertex [ 0 34 -8,
-                0 46 0,
-                7.6084523 34 -2.4721358,
-                4.7022815 34 6.4721365,
-                -4.7022829 34 6.4721355,
-                -7.6084518 34 -2.472137,
-                0 34 0 ]
+            vertex [ 0 0.034000002 -0.0080000004,
+                0 0.046000004 0,
+                0.0076084528 0.034000002 -0.0024721359,
+                0.0047022817 0.034000002 0.0064721368,
+                -0.0047022831 0.034000002 0.0064721359,
+                -0.0076084523 0.034000002 -0.0024721371,
+                0 0.034000002 0 ]
             normal [ 0 0.5547002 -0.83205032,
                 0.79132682 0.5547002 -0.25711766,
                 0.48906681 0.5547002 0.67314291,
@@ -175,23 +175,23 @@ DEF root Separator {
 
         }
       }
-      USE +0
+      USE _+0
       Material {
         diffuseColor 0.5 0 0
         emissiveColor 0.5 0 0
 
       }
-      USE +1
+      USE _+1
       IndexedTriangleStripSet {
         vertexProperty 
         VertexProperty {
-          vertex [ 34 -2.0537126e-007 -8,
-              46 2.0537126e-007 0,
-              34 -7.6084518 -2.4721358,
-              34 -4.702281 6.4721365,
-              34 4.7022824 6.4721355,
-              34 7.6084509 -2.472137,
-              34 -2.0537126e-007 0 ]
+          vertex [ 0.034000002 -2.0537128e-010 -0.0080000004,
+              0.046000004 2.0537128e-010 0,
+              0.034000002 -0.0076084523 -0.0024721359,
+              0.034000002 -0.0047022812 0.0064721368,
+              0.034000002 0.0047022826 0.0064721359,
+              0.034000002 0.0076084514 -0.0024721371,
+              0.034000002 -2.0537128e-010 0 ]
           normal [ 0.55470031 1.8986583e-008 -0.83205032,
               0.5547002 -0.79132682 -0.2571176,
               0.55470026 -0.48906681 0.67314279,
@@ -225,3 +225,4 @@ DEF root Separator {
     }
   }
 }
+

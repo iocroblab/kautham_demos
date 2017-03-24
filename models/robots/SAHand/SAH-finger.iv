@@ -10,15 +10,19 @@ DEF root Separator {
   Separator {
 
     DEF aVis_Joint0TF MatrixTransform {
+      matrix 1 0 0 0
+        0 1 0 0
+        0 0 1 0
+        0 0 0 1
 
     }
   }
   Separator {
 
     DEF aVis_Joint1TF MatrixTransform {
-      matrix 1 0 0 0
-        0 0 -1 0
-        0 1 0 0
+      matrix 1 0 -0 0
+        -0 -1.1920929e-007 -1.0000001 0
+        0 1.0000001 -1.1920929e-007 0
         0 0 0 1
 
     }
@@ -31,9 +35,9 @@ DEF root Separator {
 
     DEF aVis_Joint2TF MatrixTransform {
       matrix 1 0 0 0
-        0 0 -1 0
-        0 1 0 0
-        67.800003 0 0 1
+        0 -1.1920929e-007 -1.0000001 0
+        0 1.0000001 -1.1920929e-007 0
+        0.067800008 0 0 1
 
     }
     File {
@@ -47,7 +51,7 @@ DEF root Separator {
       matrix 0 0 1 0
         1 0 0 0
         0 1 0 0
-        97.800003 0 0 1
+        0.097800009 0 0 1
 
     }
     File {
@@ -58,11 +62,12 @@ DEF root Separator {
   Separator {
 
     DEF aVis_Joint4TF MatrixTransform {
-      matrix 0 0 1 0
-        0 -1 0 0
-        1 0 0 0
-        127.3 0 0 1
+      matrix -1.1920929e-007 0 1.0000001 0
+        0 -1.0000002 0 0
+        1.0000001 0 -1.1920929e-007 0
+        0.12730001 0 0 1
 
     }
   }
 }
+

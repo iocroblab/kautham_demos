@@ -15,20 +15,21 @@ DEF root Separator {
 
     }
     Translation {
-      translation 0 50 0
+      translation 0 0 0.050000001
 
     }
     Cylinder {
-      height 100
+      radius 0.001
+      height 0.1
 
     }
     Translation {
-      translation 0 50 0
+      translation 0 0 0.050000001
 
     }
     Cone {
-      bottomRadius 5
-      height 15
+      bottomRadius 0.0050000004
+      height 0.015000001
 
     }
     Text2 {
@@ -44,20 +45,21 @@ DEF root Separator {
 
     }
     Translation {
-      translation 0 50 0
+      translation 0 0 0.050000001
 
     }
     Cylinder {
-      height 100
+      radius 0.001
+      height 0.1
 
     }
     Translation {
-      translation 0 50 0
+      translation 0 0 0.050000001
 
     }
     Cone {
-      bottomRadius 5
-      height 15
+      bottomRadius 0.0050000004
+      height 0.015000001
 
     }
     Text2 {
@@ -77,20 +79,21 @@ DEF root Separator {
 
     }
     Translation {
-      translation 0 50 0
+      translation 0 0 0.050000001
 
     }
     Cylinder {
-      height 100
+      radius 0.001
+      height 0.1
 
     }
     Translation {
-      translation 0 50 0
+      translation 0 0 0.050000001
 
     }
     Cone {
-      bottomRadius 5
-      height 15
+      bottomRadius 0.0050000004
+      height 0.015000001
 
     }
     Text2 {
@@ -99,3 +102,4 @@ DEF root Separator {
     }
   }
 }
+

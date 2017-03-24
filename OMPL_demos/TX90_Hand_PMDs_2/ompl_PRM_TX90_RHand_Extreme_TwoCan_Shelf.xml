@@ -1,30 +1,30 @@
 <?xml version="1.0"?>
 <Problem name="ompl_PRM_TX90_RHAnd_Extreme_TwoCan_Shelf.xml">
 	<Robot robot="robots/TX90_RHand.dh" scale="1.0">
-		<Limits name="X" min="0.0" max="1000.0" />
-		<Limits name="Y" min="0.0" max="1000.0" />
-		<Limits name="Z" min="0.0" max="1000.0" />
+		<Limits name="X" min="0.0" max="1.0" />
+		<Limits name="Y" min="0.0" max="1.0" />
+		<Limits name="Z" min="0.0" max="1.0" />
 		<Limits name="WX" min="0.0" max="1.0" />
 		<Limits name="WY" min="0.0" max="1.0" />
 		<Limits name="WZ" min="0.0" max="1.0" />
 		<Limits name="THETA" min="-3.1415926536" max="3.1415926536" />
-		<Home TH="3.1415926536" WZ="1.0" WY="0.0" WX="0.0" Z="0.0" Y="425.1" X="-318.5" />
+		<Home TH="3.1415926536" WZ="1.0" WY="0.0" WX="0.0" Z="0.0" Y="0.4251" X="-0.3185" />
 		<InvKinematic name="TX90" />
 	</Robot>
-	<Obstacle obstacle="obstacles/sceneRevistaICRA09-exhaustive.iv" scale="1.0">
+	<Obstacle obstacle="obstacles/sceneRevistaICRA09-exhaustive.iv" scale="0.001">
 		<Home TH="0.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.0" Y="0.0" X="0.0" />
 	</Obstacle>
-	<Obstacle obstacle="obstacles/can.wrl" scale="1000.0">
-		<Home TH="1.5707963268" WZ="0.0" WY="0.0" WX="1.0" Z="700.0" Y="1280.0" X="-570.0" />
+	<Obstacle obstacle="obstacles/can.wrl" scale="1.0">
+		<Home TH="1.5707963268" WZ="0.0" WY="0.0" WX="1.0" Z="0.7" Y="1.28" X="-0.57" />
 	</Obstacle>
-	<Obstacle obstacle="obstacles/cangoal.wrl" scale="1000.0">
-		<Home TH="1.5707963268" WZ="0.0" WY="0.0" WX="1.0" Z="580.0" Y="1280.0" X="-570.0" />
+	<Obstacle obstacle="obstacles/cangoal.wrl" scale="1.0">
+		<Home TH="1.5707963268" WZ="0.0" WY="0.0" WX="1.0" Z="0.58" Y="1.28" X="-0.57" />
 	</Obstacle>
-	<Obstacle obstacle="obstacles/can.wrl" scale="1000.0">
-		<Home TH="1.5707963268" WZ="0.0" WY="0.0" WX="1.0" Z="580.0" Y="1200.0" X="-350.0" />
+	<Obstacle obstacle="obstacles/can.wrl" scale="1.0">
+		<Home TH="1.5707963268" WZ="0.0" WY="0.0" WX="1.0" Z="0.58" Y="1.2" X="-0.35" />
 	</Obstacle>
-	<Obstacle obstacle="obstacles/can.wrl" scale="1000.0">
-		<Home TH="1.5707963268" WZ="0.0" WY="0.0" WX="1.0" Z="580.0" Y="1200.0" X="-750.0" />
+	<Obstacle obstacle="obstacles/can.wrl" scale="1.0">
+		<Home TH="1.5707963268" WZ="0.0" WY="0.0" WX="1.0" Z="0.58" Y="1.2" X="-0.75" />
 	</Obstacle>
 	<Controls robot="controls/TX90_6dof_RHand_5PMD.cntr" />
 	<Planner>
