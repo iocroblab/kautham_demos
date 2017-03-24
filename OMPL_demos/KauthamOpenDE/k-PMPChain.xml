@@ -42,12 +42,12 @@
 			<Parameter name="Error Reduction Parameter">0.5</Parameter>
 			<Parameter name="Goal Bias">0.05</Parameter>
 			<Parameter name="Max Contacts">3</Parameter>
-			<Parameter name="Max Control Steps">10</Parameter>
+			<Parameter name="Max Control Steps">30</Parameter>
 			<Parameter name="Max Planning Time">90</Parameter>
 			<Parameter name="Max Speed">10</Parameter>
 			<Parameter name="Min Control Steps">1</Parameter>
-			<Parameter name="PropagationStepSize">0.05</Parameter>
-			<Parameter name="Speed Factor">20</Parameter>
+			<Parameter name="PropagationStepSize">0.02</Parameter>
+			<Parameter name="Speed Factor">4</Parameter>
 			<Parameter name="only final link position?">1</Parameter>
 		</Parameters>
 		<Queries>

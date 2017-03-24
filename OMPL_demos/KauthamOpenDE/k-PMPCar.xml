@@ -59,9 +59,9 @@
 			<Parameter name="Max Control Steps">50</Parameter>
 			<Parameter name="Max Planning Time">80</Parameter>
 			<Parameter name="Max Speed">10</Parameter>
-			<Parameter name="Min Control Steps">10</Parameter>
-			<Parameter name="PropagationStepSize">0.07</Parameter>
-			<Parameter name="Speed Factor">20</Parameter>
+			<Parameter name="Min Control Steps">5</Parameter>
+			<Parameter name="PropagationStepSize">0.05</Parameter>
+			<Parameter name="Speed Factor">3</Parameter>
 			<Parameter name="only final link position?">0</Parameter>
 		</Parameters>
 		<Queries>
