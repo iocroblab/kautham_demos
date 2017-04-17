@@ -10,9 +10,9 @@
     <DOF name="UR5_AllegroHandL/Index-distal" value="0.700"/>
     <DOF name="UR5_AllegroHandL/Index-last" value="0.630"/>
     <DOF name="UR5_AllegroHandL/Ring-base" value="0.782"/>
-    <DOF name="UR5_AllegroHandL/Ring-proximal" value="0.874"/>
+    <DOF name="UR5_AllegroHandL/Ring-proximal" value="0.774"/>
     <DOF name="UR5_AllegroHandL/Ring-distal" value="0.779"/>
-    <DOF name="UR5_AllegroHandL/Ring-last" value="1.000"/>
+    <DOF name="UR5_AllegroHandL/Ring-last" value="0.900"/>
     <DOF name="UR5_AllegroHandL/Thumb-base" value="0.919"/>
     <DOF name="UR5_AllegroHandL/Thumb-proximal" value="0.000"/>
     <DOF name="UR5_AllegroHandL/Thumb-distal" value="0.323"/>
