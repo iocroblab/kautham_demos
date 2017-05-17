@@ -51,7 +51,7 @@
     <joint name="joint_1_r" type="revolute">
       <parent link="body"/>
       <child link="link_1_r"/>
-      <origin xyz="0.05355 -0.0725 0.41492" rpy="-0.9781 -0.5716 -2.3180"/>
+      <origin xyz="0.05355 -0.0725 0.41492" rpy="-0.9781 -0.5682 -2.3180"/>
       <axis xyz="0 0 1"/>
       <limit lower="-2.94088" upper="2.94088" effort="300" velocity="3.142" />
       <dynamics damping="0.5"/>
@@ -71,7 +71,7 @@
       </visual>
 
       <collision>
-        <origin xyz="-0.003 -0.023 0.069" rpy="1 0.44 0"/>
+        <origin xyz="-0.003 -0.023 0.069" rpy="-1 -0.44 0"/>
         <geometry>
           <box size="0.075 0.082 0.08"/>
         </geometry>
@@ -83,7 +83,7 @@
         </geometry>
       </collision>
       <collision>
-        <origin xyz="0.03 0 0.1" rpy="1.570796327 0 0"/>
+        <origin xyz="0.03 0 0.1" rpy="-1.570796327 0 0"/>
         <geometry>
           <cylinder radius="0.055" length="0.156"/>
         </geometry>
@@ -98,6 +98,7 @@
       <limit lower="-2.50455" upper="0.759218" effort="300" velocity="3.142" />
       <dynamics damping="0.5"/>
     </joint>
+
 
    <link name="link_2_r">
       <inertial>
@@ -128,7 +129,7 @@
     <joint name="joint_7_r" type="revolute">
       <parent link="link_2_r"/>
       <child link="link_3_r"/>
-      <origin xyz="-0.03 0.17283 0" rpy="-1.571 3.142 0"/>
+      <origin xyz="-0.03 0.17283 0" rpy="-1.571 0 0"/>
       <axis xyz="0 0 1"/>
       <limit lower="-2.94088" upper="2.94088" effort="300" velocity="3.142" />
       <dynamics damping="0.5"/>
@@ -303,7 +304,7 @@
     <joint name="gripper_r_joint" type="prismatic">
       <parent link="link_7_r"/>
       <child link="gripper_r_finger_r"/>
-      <origin xyz="0 -0.0065 0.0907"/>
+      <origin xyz="0 -0.0065 0.0907"  />
       <axis xyz="-1 0 0"/>
       <limit lower="0" upper="0.025" effort="300" velocity="0.02" />
       <dynamics damping="0.5"/>
@@ -364,9 +365,9 @@
     <joint name="joint_1_l" type="revolute">
       <parent link="body"/>
       <child link="link_1_l"/>
-      <origin xyz="0.05355 0.0725 0.41492" rpy="-0.9781 0.5716 -0.8236"/>
+      <origin xyz="0.05355 0.07250 0.41492" rpy="0.9781 -0.5716 2.3180"/>
       <axis xyz="0 0 1"/>
-      <limit lower="−2.941" upper="2.941" effort="300" velocity="3.142" />
+      <limit lower="-2.941" upper="2.941" effort="300" velocity="3.142" />
       <dynamics damping="0.5"/>
     </joint>
 
@@ -443,7 +444,7 @@
       <child link="link_3_l"/>
       <origin xyz="-0.03 0.17283 0" rpy="-1.571 0 0"/>
       <axis xyz="0 0 1"/>
-      <limit lower="−2.941" upper="2.941" effort="300" velocity="3.142" />
+      <limit lower="-2.941" upper="2.941" effort="300" velocity="3.142" />
       <dynamics damping="0.5"/>
     </joint>
 
@@ -611,7 +612,7 @@
       <parent link="link_7_l"/>
       <child link="gripper_l_finger_r"/>
       <origin xyz="0 -0.0065 0.0907"/>
-      <axis xyz="-1 0 0"/>
+      <axis xyz="-1 0 0" />
       <limit lower="0" upper="0.025" effort="300" velocity="0.02" />
       <dynamics damping="0.5"/>
     </joint>
@@ -640,10 +641,10 @@
       <parent link="link_7_l"/>
       <child link="gripper_l_finger_l"/>
       <origin xyz="0 0.0065 0.0907" rpy="0 0 3.142"/>
-      <axis xyz="-1 0 0"/>
+      <axis xyz="-1 0 0" />
       <limit lower="0" upper="0.025" effort="300" velocity="0.02" />
       <dynamics damping="0.5"/>
-      <mimic joint="gripper_l_joint"/>
+     ! <mimic joint="gripper_l_joint"/> 
     </joint>
 
     <link name="gripper_l_finger_l">

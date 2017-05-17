@@ -2,11 +2,11 @@
 <Problem name="" topology="SE3">
   
 	<Robot robot="robots/yumi_right_arm.urdf" >
-	  <InvKinematic name="YUMI" />
+          <InvKinematic name="YUMI" />
 	</Robot>
 	
 	<Robot robot="robots/yumi_left_arm.urdf"  >
-	  <InvKinematic name="YUMI" />
+          <InvKinematic name="YUMI" />
 	</Robot>
 	
   	<Obstacle obstacle="robots/yumi_body.urdf"   />
