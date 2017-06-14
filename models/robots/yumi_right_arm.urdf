@@ -9,6 +9,12 @@
          <cylinder radius="0.001" length="0.001"/>
        </geometry>
       </visual>
+      <collision>
+      <origin xyz="0 0 0.01"/>
+      <geometry>
+        <cylinder radius="0.001" length="0.001"/>
+      </geometry>
+     </collision>
     </link>  
   
     <joint name="joint_1_r" type="revolute">

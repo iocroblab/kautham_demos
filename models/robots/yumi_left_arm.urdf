@@ -9,7 +9,12 @@
          <cylinder radius="0.001" length="0.001"/>
        </geometry>
       </visual>
-    </link>    
+      <collision>
+      <geometry>
+        <cylinder radius="0.001" length="0.001"/>
+      </geometry>
+     </collision>
+    </link>
     
     <joint name="joint_1_l" type="revolute">
       <parent link="null_base"/>
