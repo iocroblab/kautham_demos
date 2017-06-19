@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<robot name="kuka_lwr">
+<robot name="kukaLWR">
   <WeightSE3 rho_t="0.05" rho_r="0.05" />
   <link name="base">
     <inertial>
@@ -20,7 +20,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="kuka_lwr/base.wrl" scale="0.001 0.001 0.001"/>
+        <mesh filename="kukaLWR/base.wrl" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -51,7 +51,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="kuka_lwr/link1.wrl" scale="0.001 0.001 0.001"/>
+        <mesh filename="kukaLWR/link1.wrl" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -73,7 +73,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="kuka_lwr/link2.wrl" scale="0.001 0.001 0.001"/>
+        <mesh filename="kukaLWR/link2.wrl" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -104,7 +104,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0.2"/>
       <geometry>
-        <mesh filename="kuka_lwr/link3.wrl" scale="0.001 0.001 0.001"/>
+        <mesh filename="kukaLWR/link3.wrl" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -126,7 +126,7 @@
     <visual>
       <origin rpy="3.141592654 3.141592654 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="kuka_lwr/link4.wrl" scale="0.001 0.001 0.001"/>
+        <mesh filename="kukaLWR/link4.wrl" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -148,7 +148,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0.19"/>
       <geometry>
-        <mesh filename="kuka_lwr/link5.wrl" scale="0.001 0.001 0.001"/>
+        <mesh filename="kukaLWR/link5.wrl" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -170,7 +170,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="kuka_lwr/link6.wrl" scale="0.001 0.001 0.001"/>
+        <mesh filename="kukaLWR/link6.wrl" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -192,7 +192,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0.078"/>
       <geometry>
-        <mesh filename="kuka_lwr/link7.wrl" scale="0.001 0.001 0.001"/>
+        <mesh filename="kukaLWR/link7.wrl" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>

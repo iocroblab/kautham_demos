@@ -2,31 +2,31 @@
 <ControlSet>
   
   <Control name="Shoulder1" eigValue="1">
-    <DOF name="kuka_lwr/link1" value="1"/>
+    <DOF name="kukaLWR/link1" value="1"/>
   </Control>
   
   <Control name="Shoulder2" eigValue="1">
-    <DOF name="kuka_lwr/link2" value="1"/>
+    <DOF name="kukaLWR/link2" value="1"/>
   </Control>
 
   <Control name="Shoulder3" eigValue="1">
-    <DOF name="kuka_lwr/link3" value="1"/>
+    <DOF name="kukaLWR/link3" value="1"/>
   </Control>
 
   <Control name="Elbow" eigValue="1">
-    <DOF name="kuka_lwr/link4" value="1"/>
+    <DOF name="kukaLWR/link4" value="1"/>
   </Control>
 
   <Control name="Wrist1" eigValue="1">
-    <DOF name="kuka_lwr/link5" value="1"/>
+    <DOF name="kukaLWR/link5" value="1"/>
   </Control>
 
   <Control name="Wrist2" eigValue="1">
-    <DOF name="kuka_lwr/link6" value="1"/>
+    <DOF name="kukaLWR/link6" value="1"/>
   </Control>
 
   <Control name="Wrist3" eigValue="1">
-    <DOF name="kuka_lwr/link7" value="1"/>
+    <DOF name="kukaLWR/link7" value="1"/>
   </Control>
 
 </ControlSet>
