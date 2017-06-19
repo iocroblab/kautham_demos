@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
-<robot name="kuka_lwr_AllegroRH">
-	<WeightSE3 rho_t="0.05" rho_r="0.05" />
+<robot name="kuka_lwr">
+  <WeightSE3 rho_t="0.05" rho_r="0.05" />
   <link name="base">
     <inertial>
       <mass value="2.7"/>
