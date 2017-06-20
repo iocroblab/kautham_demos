@@ -20,7 +20,8 @@
 			<Parameter name="Max Planning Time">3.0</Parameter>
 			<Parameter name="Speed Factor">5</Parameter>
 			<Parameter name="PropagationStepSize">0.01</Parameter>
-			<Parameter name="Duration">10</Parameter>
+			<Parameter name="MinDuration">1</Parameter>
+			<Parameter name="MaxDuration">10</Parameter>
 			<Parameter name="ControlBound_Tras">2.5</Parameter>
 			<Parameter name="ControlBound_Rot">0.8</Parameter>
 			<Parameter name="Length">5</Parameter>
