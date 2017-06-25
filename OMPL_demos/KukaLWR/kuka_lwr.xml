@@ -6,23 +6,15 @@
         </Obstacle>
 
   
-<!--        <Robot robot="robots/kuka_lwr.urdf"  >
+        <Robot robot="robots/kuka_lwr.urdf"  >
           <InvKinematic name="KUKA_LWR" />
         </Robot>
-        <Controls robot="controls/kuka_lwr.cntr"/>-->
+        <Controls robot="controls/kuka_lwr.cntr"/>
 	
-        <Robot robot="robots/KukaLWR.dh"  >
-	  <Limits name="X" min="0.0" max="1.0" />
-	  <Limits name="Y" min="0.0" max="1.0" />
-	  <Limits name="Z" min="0.0" max="1.0" />
-	  <Limits name="WX" min="0.0" max="1.0" />
-	  <Limits name="WY" min="0.0" max="1.0" />
-	  <Limits name="WZ" min="0.0" max="1.0" />
-	  <Limits name="THETA" min="-3.1415926536" max="3.1415926536" />
-	  <Home TH="0.0" WZ="1.0" WY="0.0" WX="0.0" Z="0.0" Y="0.0" X="0.0" />
+<!--        <Robot robot="robots/KukaLWR.dh"  >
           <InvKinematic name="KUKA_LWR" />
         </Robot>
-	<Controls robot="controls/kuka_lwr_dh.cntr"/> 
+	<Controls robot="controls/kuka_lwr_dh.cntr"/>--> 
 
 	
 
