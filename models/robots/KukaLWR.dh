@@ -52,8 +52,7 @@
 			<Parent name="joint5" />
 		</Joint>
 		<Joint name="joint7" ivFile="kukaLWR/link7.wrl">
-			<DHPars alpha="-1.5707963268" a="0.0" theta="0.0" d="0.0" />
-<!-- 			<DHPars alpha="-1.5707963268" a="0.0" theta="0.0" d="0.078" /> -->
+			<DHPars alpha="-1.5707963268" a="0.0" theta="0.0" d="0.078" />
 			<Description rotational="true" movable="true" />
 			<Limits Hi="2.9670597284" Low="-2.9670597284" />
 			<Weight weight="1.0" />
