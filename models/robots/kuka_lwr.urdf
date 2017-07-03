@@ -190,12 +190,13 @@
       </material>
     </collision>
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0.078"/>
+      <origin rpy="0 0 0" xyz="0 0 0.0"/>
       <geometry>
         <mesh filename="kukaLWR/link7.wrl" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
+  
   <joint type="revolute" name="joint1">
     <parent link="base"/>
     <child link="link1"/>
@@ -241,9 +242,30 @@
   <joint type="revolute" name="joint7">
     <parent link="link6"/>
     <child link="link7"/>
-    <origin rpy="-1.57079632679 0 0" xyz="0 0 0.078"/>
+    <origin rpy="-1.57079632679 0 0" xyz="0 0.078 0"/>
     <axis xyz="0 0 1"/>
     <limit velocity="1.6" effort="150" lower="-2.96705972839" upper="2.96705972839"/>
   </joint>
+  
+
+  
+  <!-- For testing purposes -->
+  
+<!--  <link name="link8">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.05"/>
+      <geometry>
+	<cylinder length="0.1" radius="0.2"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint type="revolute" name="joint8">
+    <parent link="link7"/>
+    <child link="link8"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>    
+    <axis xyz="0 0 1"/>
+    <limit velocity="1.6" effort="150" lower="-2.96705972839" upper="2.96705972839"/>
+  </joint>-->
 
 </robot>
