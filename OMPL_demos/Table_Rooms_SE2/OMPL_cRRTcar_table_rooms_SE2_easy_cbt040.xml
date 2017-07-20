@@ -21,11 +21,7 @@
 			<Parameter name="Max Planning Time">10.0</Parameter>
 			<Parameter name="Speed Factor">10</Parameter>
 			<Parameter name="PropagationStepSize">0.06</Parameter>
-
-			<Parameter name="MinDuration">1</Parameter>
-			<Parameter name="MaxDuration">10</Parameter>
-
-			<Parameter name="ControlBound_Tras">25</Parameter>
+			<Parameter name="ControlBound_Tras">40</Parameter>
 			<Parameter name="ControlBound_Rot">1.2</Parameter>
 			<Parameter name="OnlyForward (0/1)">1</Parameter>
 			<Parameter name="CarLength">48</Parameter>

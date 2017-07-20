@@ -1,0 +1,12 @@
+<Benchmark Name="experiment">
+	<Problem File="OMPL_SST_f16_universe.xml" PlannerAlias="SST_f16" />
+	<Problem File="OMPL_SST_f16_universe_1.xml" PlannerAlias="SST_f16_pr.005" />
+	<Problem File="OMPL_SST_f16_universe_2.xml" PlannerAlias="SST_f16_sr_15" />
+	<Parameter Name="maxTime" Value="10.0" />
+	<Parameter Name="maxMem" Value="8000" />
+	<Parameter Name="runCount" Value="10" />
+	<Parameter Name="displayProgress" Value="true" />
+	<Parameter Name="filename" Value="resultSST_f16.log" />
+</Benchmark>
+
+

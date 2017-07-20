@@ -1,0 +1,14 @@
+<Benchmark Name="experiment">
+	<Problem File="OMPL_cRRTdualdrive_table_rooms_SE2_easy.xml" PlannerAlias="RRT_dd_cb2" />
+	<Problem File="OMPL_cRRTdualdrive_table_rooms_SE2_easy_1.xml" PlannerAlias="RRT_dd_cb4" />
+	<Problem File="OMPL_cRRTdualdrive_table_rooms_SE2_easy_2.xml" PlannerAlias="RRT_dd_cb5" />
+	<Problem File="OMPL_cRRTdualdrive_table_rooms_SE2_easy_3.xml" PlannerAlias="RRT_dd_cb10" />
+
+	<Parameter Name="maxTime" Value="3.0" />
+	<Parameter Name="maxMem" Value="8000" />
+	<Parameter Name="runCount" Value="10" />
+	<Parameter Name="displayProgress" Value="true" />
+	<Parameter Name="filename" Value="resultRRT_dualdrive.log" />
+</Benchmark>
+
+
