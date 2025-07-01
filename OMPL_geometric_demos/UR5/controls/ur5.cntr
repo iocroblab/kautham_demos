@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ControlSet>
+
+	<!-- DOF OFFSETs -->
+
+    <Offset>		
+
+	</Offset>
+
+	<!-- CONTROLS -->
+
+    <Control name="ur5/shoulder_pan_joint" eigValue="1.0">
+		<DOF name="ur5/shoulder_link" value="1.0"/>
+	</Control>
+	<Control name="ur5/shoulder_lift_joint" eigValue="1.0">
+		<DOF name="ur5/upper_arm_link" value="1.0"/>
+	</Control> 
+	<Control name="ur5/elbow_joint" eigValue="1.0">
+		<DOF name="ur5/forearm_link" value="1.0"/>
+	</Control> 
+	<Control name="ur5/wrist_1_joint" eigValue="1.0">
+		<DOF name="ur5/wrist_1_link" value="1.0"/>
+	</Control>
+	<Control name="ur5/wrist_2_joint" eigValue="1.0">
+		<DOF name="ur5/wrist_2_link" value="1.0"/>
+	</Control>
+	<Control name="ur5/wrist_3_joint" eigValue="1.0">
+		<DOF name="ur5/wrist_3_link" value="1.0"/>
+	</Control>
+
+
+</ControlSet>
