@@ -26,14 +26,19 @@
     <!--When using gazebo simulations absolute paths are necessary.-->
     <xacro:arg name="force_abs_paths" default="true" />
 
+    <!-- Arguments for parent and origin -->
+    <xacro:arg name="parent" default="world"/>
+    <xacro:arg name="origin_xyz" default="0 0 0"/>
+    <xacro:arg name="origin_rpy" default="0 0 0"/>
+
     <!-- create link fixed to the "world" -->
-    <link name="$(arg name)_base_link" />
+    <link name="$(arg parent)" />
 
     <!-- arm -->
     <xacro:ur_robot
         name="$(arg name)"
         tf_prefix="$(arg tf_prefix)"
-        parent="$(arg name)_base_link"
+        parent="$(arg parent)"
         joint_limits_parameters_file="$(arg joint_limit_params)"
         kinematics_parameters_file="$(arg kinematics_params)"
         physical_parameters_file="$(arg physical_params)"
@@ -43,6 +48,6 @@
         safety_k_position="$(arg safety_k_position)"
         force_abs_paths="$(arg force_abs_paths)"
         >
-        <origin xyz="0 0 0" rpy="0 0 0" />          <!-- position robot in the world -->
+        <origin xyz="$(arg origin_xyz)" rpy="$(arg origin_rpy)" />          <!-- position robot in the parent reference -->
     </xacro:ur_robot>
 </robot>
