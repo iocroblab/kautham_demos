@@ -1,8 +1,27 @@
 # Modifications to use the Universal Robots Description Files in Kautham
 
 This document details the changes made to the official Universal Robots description files from the [Universal_Robots_ROS2_Description](https://github.com/UniversalRobots/Universal_Robots_ROS2_Description) repository to adapt them for use in Kautham.  
-It focuses on modifications to the `get_mesh_path` macro and the use of relative file inclusions to ensure compatibility outside of a ROS environment.
+It focuses on modifications to ensure compatibility outside of a ROS environment.
 
+## Conditional Creation of the `base_joint`
+
+To allow the robot description to be used both as a standalone model (with `base_link` as the root) and as a subcomponent attached to an external link, the creation of the `base_joint` has been made conditional.  
+This is achieved by wrapping the joint definition in a conditional block that checks if the `parent` parameter is set:
+
+```
+<xacro:if value="${parent != ''}">
+    <joint name="${tf_prefix}base_joint" type="fixed">
+        <xacro:insert_block name="origin" />
+        <parent link="${parent}" />
+        <child link="${tf_prefix}base_link" />
+    </joint>
+</xacro:if>
+```
+
+- **If `parent` is specified**, the joint is created, fixing the robot to the given parent link.
+- **If `parent` is not specified or is empty**, the joint is omitted, and `base_link` becomes the root of the kinematic tree.
+
+This modification increases the flexibility of the robot description.
 
 ## Macro Adaptation for Relative Paths
 
