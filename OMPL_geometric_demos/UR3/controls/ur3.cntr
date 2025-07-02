@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ControlSet>
+
+	<Offset>
+
+		<DOF robot="ur3" name="shoulder_pan_joint" value="0.5"/>
+		<DOF robot="ur3" name="shoulder_lift_joint" value="0.5"/>
+		<DOF robot="ur3" name="elbow_joint" value="0.5"/>
+		<DOF robot="ur3" name="wrist_1_joint" value="0.5"/>
+		<DOF robot="ur3" name="wrist_2_joint" value="0.5"/>
+		<DOF robot="ur3" name="wrist_3_joint" value="0.5"/>
+
+	</Offset>
+
+
+	<Control name="ur3_shoulder_pan_joint" eigValue="1.0">
+		<DOF robot="ur3" name="shoulder_pan_joint" value="1.0"/>
+	</Control>
+	<Control name="ur3_shoulder_lift_joint" eigValue="1.0">
+		<DOF robot="ur3" name="shoulder_lift_joint" value="1.0"/>
+	</Control> 
+	<Control name="ur3_elbow_joint" eigValue="1.0">
+		<DOF robot="ur3" name="elbow_joint" value="1.0"/>
+	</Control> 
+	<Control name="ur3_wrist_1_joint" eigValue="1.0">
+		<DOF robot="ur3" name="wrist_1_joint" value="1.0"/>
+	</Control>
+	<Control name="ur3_wrist_2_joint" eigValue="1.0">
+		<DOF robot="ur3" name="wrist_2_joint" value="1.0"/>
+	</Control>
+	<Control name="ur3_wrist_3_joint" eigValue="1.0">
+		<DOF robot="ur3" name="wrist_3_joint" value="1.0"/>
+	</Control>
+
+
+</ControlSet>
