@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ControlSet>
+
+	<Offset>
+
+		<DOF robot="pmb2_robot" name="wheel_right_joint" value="0.5"/>
+		<DOF robot="pmb2_robot" name="wheel_left_joint" value="0.5"/>
+		
+	</Offset>
+
+
+	<Control name="wheel_right_joint" eigValue="1.0">
+		<DOF robot="pmb2_robot" name="wheel_right_joint" value="1.0"/>
+	</Control>
+	<Control name="wheel_left_joint" eigValue="1.0">
+		<DOF robot="pmb2_robot" name="wheel_left_joint" value="1.0"/>
+	</Control>
+
+</ControlSet>
