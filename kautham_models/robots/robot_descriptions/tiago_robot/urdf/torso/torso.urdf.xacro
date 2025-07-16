@@ -17,12 +17,14 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
+  <xacro:arg name="tiago_torso_description" default="./../../robot_descriptions/tiago_robot"/>
+
   <!-- PROPERTIES -->
   <xacro:property name="torso_max_vel" value="0.07" />
   <xacro:property name="torso_eps" value="0.02" />
 
   <!-- INCLUDES -->
-  <xacro:include filename="$(find pal_urdf_utils)/urdf/deg_to_rad.urdf.xacro" />
+  <xacro:include filename="$(arg pal_urdf_utils)/urdf/deg_to_rad.urdf.xacro" />
 
   <!-- MACRO DEFINITION-->
   <xacro:macro name="tiago_torso" params="name parent *origin">
@@ -37,7 +39,7 @@
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_description/meshes/torso/torso_fix.stl" scale="1 1 1"/>
+          <mesh filename="$(arg tiago_torso_description)/meshes/torso/torso_fix.stl" scale="1 1 1"/>
         </geometry>
         <material name="LightGrey"/>
       </visual>
@@ -76,13 +78,13 @@
         </geometry>
         <material name="DarkGrey"/>
       </visual>
-      <collision>
+      <!-- <collision>
         <origin rpy="0 0 0" xyz="0 0 0.275" />
         <geometry>
           <box size="0.23 0.23 0.55"/>
         </geometry>
         <material name="DarkGrey"/>
-      </collision>
+      </collision> -->
     </link>
     <gazebo reference="${name}_fixed_column_link">
       <material>Gazebo/DarkGrey</material>
@@ -105,28 +107,28 @@
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_description/meshes/torso/torso_lift_with_arm.stl" scale="1 1 1"/>
+          <mesh filename="$(arg tiago_torso_description)/meshes/torso/torso_lift_with_arm.stl" scale="1 1 1"/>
         </geometry>
         <material name="White"/>
       </visual>
       <collision>
         <origin rpy="0 0 0" xyz="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_description/meshes/torso/torso_lift_collision_core.dae" scale="1 1 1"/>
+          <mesh filename="$(arg tiago_torso_description)/meshes/torso/torso_lift_collision_core.dae" scale="1 1 1"/>
         </geometry>
         <material name="LightGrey"/>
       </collision>
       <collision>
         <origin rpy="0 0 0" xyz="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_description/meshes/torso/torso_lift_collision_shoulder.dae" scale="1 1 1"/>
+          <mesh filename="$(arg tiago_torso_description)/meshes/torso/torso_lift_collision_shoulder.dae" scale="1 1 1"/>
         </geometry>
         <material name="LightGrey"/>
       </collision>
       <collision>
         <origin rpy="0 0 0" xyz="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_description/meshes/torso/torso_lift_collision_neck.dae" scale="1 1 1"/>
+          <mesh filename="$(arg tiago_torso_description)/meshes/torso/torso_lift_collision_neck.dae" scale="1 1 1"/>
         </geometry>
         <material name="LightGrey"/>
       </collision>

@@ -29,10 +29,11 @@
   <xacro:property name="head_eps" value="${0.00 if no_safety_eps else 0.07}" />
 
   <!-- INCLUDES -->
-  <xacro:include filename="$(find pal_urdf_utils)/urdf/deg_to_rad.urdf.xacro" />
-  <xacro:include filename="$(find pal_urdf_utils)/urdf/camera/xtion_pro_live.urdf.xacro" />
-  <xacro:include filename="$(find pal_urdf_utils)/urdf/camera/orbbec_astra.urdf.xacro" />
-  <xacro:include filename="$(arg eye_hand_calibration_dir)/eye_hand_calibration.urdf.xacro" />
+    <xacro:arg name="tiago_head_description_path" default="./../../robot_descriptions/tiago_robot"/>
+    <!-- <xacro:include filename="$(arg pal_urdf_utils_path)/urdf/deg_to_rad.urdf.xacro" /> -->
+  <!-- <xacro:include filename="$(arg pal_urdf_utils_path)/urdf/camera/xtion_pro_live.urdf.xacro" />
+  <xacro:include filename="$(arg pal_urdf_utils_path)/urdf/camera/orbbec_astra.urdf.xacro" />
+  <xacro:include filename="$(arg eye_hand_calibration_dir)/eye_hand_calibration.urdf.xacro" /> -->
 
   <!-- MACRO DEFINITION-->
 
@@ -47,14 +48,14 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://tiago_description/meshes/head/head_1.stl" scale="1 1 1"/>
+          <mesh filename="$(arg tiago_head_description_path)/meshes/head/head_1.stl" scale="1 1 1"/>
         </geometry>
         <material name="White" />
       </visual>
       <collision>
         <origin xyz="0.0 0 0" rpy="0 0 0.0" />
         <geometry>
-          <mesh filename="package://tiago_description/meshes/head/head_1_collision.dae" scale="1 1 1"/>
+          <mesh filename="$(arg tiago_head_description_path)/meshes/head/head_1_collision.dae" scale="1 1 1"/>
         </geometry>
         <material name="White" />
       </collision>
@@ -70,14 +71,14 @@
       <safety_controller k_position="20" k_velocity="20" soft_lower_limit="${head_1_lower_limit * deg_to_rad + head_eps}" soft_upper_limit="${head_1_upper_limit * deg_to_rad - head_eps}" />
     </joint>
 
-    <gazebo reference="${name}_link">
+    <!-- <gazebo reference="${name}_link">
       <mu1>0.9</mu1>
       <mu2>0.9</mu2>
-    </gazebo>
+    </gazebo> -->
 
-    <gazebo reference="${name}_joint">
+    <!-- <gazebo reference="${name}_joint">
       <implicitSpringDamper>1</implicitSpringDamper>
-    </gazebo>
+    </gazebo> -->
 
   </xacro:macro>
 
@@ -92,14 +93,14 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_description/meshes/head/head_2.stl" scale="1 1 1"/>
+          <mesh filename="$(arg tiago_head_description_path)/meshes/head/head_2.stl" scale="1 1 1"/>
         </geometry>
         <material name="White" />
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_description/meshes/head/head_2_collision.dae" scale="1 1 1"/>
+          <mesh filename="$(arg tiago_head_description_path)/meshes/head/head_2_collision.dae" scale="1 1 1"/>
         </geometry>
       </collision>
     </link>
@@ -127,25 +128,25 @@
     <!-- Cameras-->
 
     <!-- Asus Xtion-->
-    <xacro:if value="${camera_model == 'asus-xtion'}">
+    <!-- <xacro:if value="${camera_model == 'asus-xtion'}">
       <xacro:xtion_pro_live name="head_front_camera" parent="${name}_2_link" camera_model="${camera_model}" camera_extrinsic_calibration_dir="${camera_extrinsic_calibration_dir}">
-        <origin xyz="${camera_position_x} ${camera_position_y} ${camera_position_z}" rpy="${camera_orientation_r} ${camera_orientation_p} ${camera_orientation_y}" />
+        <origin xyz="${camera_position_x} ${camera_position_y} ${camera_position_z}" rpy="${camera_orientation_r} ${camera_orientation_p} ${camera_orientation_y}" /> -->
         <!-- optical origin -->
-        <origin xyz="0 0 0" rpy="${-90 * deg_to_rad} ${0 * deg_to_rad} ${-90 * deg_to_rad}" />
+        <!-- <origin xyz="0 0 0" rpy="${-90 * deg_to_rad} ${0 * deg_to_rad} ${-90 * deg_to_rad}" />
       </xacro:xtion_pro_live>
-    </xacro:if>
+    </xacro:if> -->
 
     <!-- Orbecc Astra-->
-    <xacro:if value="${camera_model in ['orbbec-astra', 'orbbec-astra-pro']}">
+    <!-- <xacro:if value="${camera_model in ['orbbec-astra', 'orbbec-astra-pro']}">
       <xacro:orbbec_astra name="head_front_camera" parent="${name}_2_link" camera_model="${camera_model}" camera_extrinsic_calibration_dir="${camera_extrinsic_calibration_dir}">
-        <origin xyz="${camera_position_x} ${camera_position_y} ${camera_position_z}" rpy="${camera_orientation_r} ${camera_orientation_p} ${camera_orientation_y}" />
+        <origin xyz="${camera_position_x} ${camera_position_y} ${camera_position_z}" rpy="${camera_orientation_r} ${camera_orientation_p} ${camera_orientation_y}" /> -->
         <!-- optical origin -->
-        <origin xyz="0 0 0" rpy="${-90 * deg_to_rad} ${0 * deg_to_rad} ${-90 * deg_to_rad}" />
+        <!-- <origin xyz="0 0 0" rpy="${-90 * deg_to_rad} ${0 * deg_to_rad} ${-90 * deg_to_rad}" />
       </xacro:orbbec_astra>
-    </xacro:if>
+    </xacro:if> -->
 
     <!-- Thermal camera -->
-    <xacro:if value="${has_thermal_camera}">
+    <!-- <xacro:if value="${has_thermal_camera}">
       <joint name="thermal_camera_joint" type="fixed">
         <parent link="${head_link_name}"/>
         <child link="thermal_camera"/>
@@ -158,7 +159,7 @@
           <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001" />
         </inertial>
       </link>
-    </xacro:if>
+    </xacro:if> -->
 
   </xacro:macro>
 

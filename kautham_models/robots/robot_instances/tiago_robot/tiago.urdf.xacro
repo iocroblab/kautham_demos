@@ -29,8 +29,12 @@
 
   <!-- ARGUMENTS -->
 
+  <xacro:arg name="pal_urdf_utils_path" default="./../../robot_descriptions/pal_urdf_utils"/>
+  <xacro:arg name="tiago_description" default="./../../robot_descriptions/tiago_robot"/>
+  
   <!-- pmb2, omni_base -->
   <xacro:arg name="base_type" default="pmb2"/>
+  <xacro:arg name="base_description" default="./../../robot_descriptions/$(arg base_type)_robot"/>
 
   <!-- no-laser, hokuyo, sick-551, sick-561, sick-571-->
   <xacro:arg name="laser_model" default="sick-571"/>
@@ -42,13 +46,14 @@
   <xacro:arg name="arm_type" default="tiago-arm"/>
 
   <!-- no-ft-sensor, schunk-ft -->
-  <xacro:arg name="ft_sensor" default="schunk-ft"/>
+  <xacro:arg name="ft_sensor" default="no-ft-sensor"/>
 
   <!-- wrist-2010, wrist-2017 -->
   <xacro:arg name="wrist_model" default="wrist-2017"/>
+  <!-- <xacro:arg name="wrist_model" default="wrist-2010"/> -->
 
   <!-- no-end-effector, pal-gripper, pal-hey5, custom, robotiq-2f-85,robotiq-2f-140-->
-  <xacro:arg name="end_effector" default="pal-hey5"/>
+  <xacro:arg name="end_effector" default="pal-gripper"/>
 
   <!-- no-camera, orbbec-astra, orbbec-astra-pro, asus-xtion -->
   <xacro:arg name="camera_model" default="orbbec-astra"/>
@@ -131,12 +136,8 @@
 
   <!-- INCLUDES -->
 
-  <!-- Kautham paths -->
-  <xacro:arg name="tiago_description" default="./../../robot_descriptions/tiago_robot"/>
-  <xacro:arg name="base_description" default="./../../robot_descriptions/${base_type}_robot"/>
-
   <!-- Tools -->
-  <!-- <xacro:include filename="$(find pal_urdf_utils)/urdf/deg_to_rad.urdf.xacro" /> -->
+  <xacro:include filename="$(arg pal_urdf_utils_path)/urdf/deg_to_rad.urdf.xacro" />
 
   <!-- Base -->
   <xacro:include filename="$(arg base_description)/urdf/base/base_sensors.urdf.xacro" />
@@ -152,7 +153,7 @@
 
     <!-- FT sensor -->
     <!-- <xacro:if value="${has_ft_sensor}">
-      <xacro:include filename="$(find pal_urdf_utils)/urdf/ft_sensors/schunk.urdf.xacro" />
+      <xacro:include filename="$(arg pal_urdf_utils_path)/urdf/ft_sensors/schunk.urdf.xacro" />
     </xacro:if> -->
 
     <!-- End effector -->
@@ -166,10 +167,10 @@
   <xacro:include filename="$(arg tiago_description)/urdf/head/head.urdf.xacro" />
 
   <!-- Materials for visualization -->
-  <!-- <xacro:include filename="$(find pal_urdf_utils)/urdf/materials.urdf.xacro" /> -->
+  <xacro:include filename="$(arg pal_urdf_utils_path)/urdf/materials.urdf.xacro" />
 
   <!-- ROS 2 control -->
-  <xacro:include filename="$(arg tiago_description)/ros2_control/ros2_control.urdf.xacro" />
+  <!-- <xacro:include filename="$(arg tiago_description)/ros2_control/ros2_control.urdf.xacro" /> -->
 
   <!-- ROBOT DEFINITION -->
 
@@ -200,9 +201,9 @@
     </xacro:tiago_arm>
 
     <!-- FT sensor -->
-    <xacro:if value="${has_ft_sensor}">
+    <!-- <xacro:if value="${has_ft_sensor}">
       <xacro:ft_sensor name="wrist" parent="arm_tool_link" />
-    </xacro:if>
+    </xacro:if> -->
 
     <!-- End effector -->
     <xacro:if value="${has_end_effector}">
@@ -215,6 +216,6 @@
   <xacro:head name="head" parent="torso_lift_link"/>
 
   <!-- ROS 2 Control -->
-  <xacro:tiago_ros2_control />
+  <!-- <xacro:tiago_ros2_control /> -->
 
 </robot>

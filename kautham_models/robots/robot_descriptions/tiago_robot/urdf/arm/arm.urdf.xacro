@@ -31,8 +31,9 @@
   <xacro:property name="arm_eps" value="${0.00 if no_safety_eps else 0.07}"/>
 
   <!-- INCLUDES -->
-  <xacro:include filename="$(find pal_urdf_utils)/urdf/deg_to_rad.urdf.xacro" />
-  <xacro:include filename="$(find tiago_description)/urdf/arm/wrist.urdf.xacro" />
+  <!-- <xacro:include filename="$(find pal_urdf_utils)/urdf/deg_to_rad.urdf.xacro" /> -->
+  <xacro:arg name="from_tiago_arm_2_tiago_description_path" default="./../../robot_descriptions/tiago_robot"/>
+  <xacro:include filename="./wrist.urdf.xacro" />
 
   <!-- MACRO DEFINITION-->
   <xacro:macro name="tiago_arm" params="name parent reflect wrist_model has_ft_sensor tiago_dual *origin">
@@ -57,14 +58,14 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_description/meshes/arm/arm_1.stl" scale="1 ${-1 * tiago_dual} ${reflect}"/>
+          <mesh filename="$(arg from_tiago_arm_2_tiago_description_path)/meshes/arm/arm_1.stl" scale="1 ${-1 * tiago_dual} ${reflect}"/>
         </geometry>
         <material name="White"/>
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_description/meshes/arm/arm_1_collision.dae" scale="1 ${-1 * tiago_dual} ${reflect}"/>
+          <mesh filename="$(arg from_tiago_arm_2_tiago_description_path)/meshes/arm/arm_1_collision.dae" scale="1 ${-1 * tiago_dual} ${reflect}"/>
         </geometry>
       </collision>
     </link>
@@ -92,7 +93,7 @@
         <!-- <origin xyz="0 0 0" rpy="${180 * deg_to_rad} ${0 * deg_to_rad} ${-90 * deg_to_rad}" /> -->
         <origin xyz="0 0 0" rpy="${0 * deg_to_rad} ${0 * deg_to_rad} ${0 * deg_to_rad}" />
         <geometry>
-          <mesh filename="package://tiago_description/meshes/arm/arm_2.stl" scale="1 1 ${reflect}"/>
+          <mesh filename="$(arg from_tiago_arm_2_tiago_description_path)/meshes/arm/arm_2.stl" scale="1 1 ${reflect}"/>
         </geometry>
         <material name="DarkGrey" />
       </visual>
@@ -100,7 +101,7 @@
         <!-- <origin xyz="0 0 0" rpy="${180 * deg_to_rad} ${0 * deg_to_rad} ${-90 * deg_to_rad}" /> -->
         <origin xyz="0 0 0" rpy="${0 * deg_to_rad} ${0 * deg_to_rad} ${0 * deg_to_rad}" />
         <geometry>
-          <mesh filename="package://tiago_description/meshes/arm/arm_2_collision.dae" scale="1 1 ${reflect}"/>
+          <mesh filename="$(arg from_tiago_arm_2_tiago_description_path)/meshes/arm/arm_2_collision.dae" scale="1 1 ${reflect}"/>
         </geometry>
       </collision>
     </link>
@@ -127,14 +128,14 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_description/meshes/arm/arm_3.stl" scale="1 1 ${reflect}"/>
+          <mesh filename="$(arg from_tiago_arm_2_tiago_description_path)/meshes/arm/arm_3.stl" scale="1 1 ${reflect}"/>
         </geometry>
         <material name="DarkGrey" />
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_description/meshes/arm/arm_3_collision.dae" scale="1 1 ${reflect}"/>
+          <mesh filename="$(arg from_tiago_arm_2_tiago_description_path)/meshes/arm/arm_3_collision.dae" scale="1 1 ${reflect}"/>
         </geometry>
       </collision>
     </link>
@@ -162,14 +163,14 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_description/meshes/arm/arm_4.stl" scale="${reflect} ${reflect} ${reflect}"/>
+          <mesh filename="$(arg from_tiago_arm_2_tiago_description_path)/meshes/arm/arm_4.stl" scale="${reflect} ${reflect} ${reflect}"/>
         </geometry>
         <material name="DarkGrey" />
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://tiago_description/meshes/arm/arm_4_collision.dae" scale="${reflect} ${reflect} ${reflect}"/>
+          <mesh filename="$(arg from_tiago_arm_2_tiago_description_path)/meshes/arm/arm_4_collision.dae" scale="${reflect} ${reflect} ${reflect}"/>
         </geometry>
       </collision>
     </link>
