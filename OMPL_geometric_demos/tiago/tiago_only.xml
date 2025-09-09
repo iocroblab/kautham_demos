@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<Problem name="OnlyPMB2">
+<Problem name="OnlyTiago">
 
 	<Robot robot="./robots/robot_instances/tiago_robot/tiago.urdf.xacro" scale="1.0">
 		<Home X="0.5" Y="-0.5" Z="0.0" TH="1.570796" WX="0.0" WY="0.0" WZ="0.0"/>
