@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+    <xacro:arg name="bmm3_robot_meshes" default="./../../robot_descriptions/bmm"/>
+
+    <xacro:macro name="bmm3_robot" params="prefix">
+
+        <link name="${prefix}base_link">
+            <visual>
+                <geometry>
+                    <mesh filename="$(arg bmm3_robot_meshes)/meshes/estructura_asm.dae"/>
+                </geometry>
+            </visual>
+            <!-- PLATFORM: -->
+            <collision>
+                <origin xyz="0 0 0.375"/>
+                <geometry>
+                    <cylinder radius="0.4" length="0.75"/>
+                </geometry>
+            </collision>
+            <!-- HORIZONTAL T: -->
+            <collision>
+                <origin xyz="0 0 1.395"/>
+                <geometry>
+                    <box size="0.45 0.08 0.05"/>
+                </geometry>
+            </collision>
+            <!-- VERTICAL T: -->
+            <collision>
+                <origin xyz="0 0 1.056"/>
+                <geometry>
+                    <box size="0.08 0.08 0.63"/>
+                </geometry>
+            </collision>
+            <!-- PC BOX: -->
+            <collision>
+                <origin xyz="0 -0.14 0.916"/>
+                <geometry>
+                    <box size="0.43 0.2 0.33"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <joint name="motor_1" type="continuous">
+            <parent link="${prefix}base_link"/>
+            <child link="wheel_1_link"/>
+            <axis xyz="-1 0 0"/>
+            <origin rpy="2.0944 0 1.5708" xyz="0 -0.2905 0.1"/>
+        </joint>
+    
+        <link name="wheel_1_link">
+            <visual>
+                <geometry>
+                    <mesh filename="$(arg bmm3_robot_meshes)/meshes/wheel.dae"/>
+                </geometry>
+            </visual>
+            <collision>
+                <geometry>
+                    <sphere radius="0.10"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <mass value="10"/>
+                <inertia ixx="0.04" ixy="0" ixz="0" iyy="0.04" iyz="0" izz="0.04"/> <!-- Provisional inertia values -->
+            </inertial>
+        </link>
+    
+        <joint name="motor_2" type="continuous">
+            <parent link="${prefix}base_link"/>
+            <child link="wheel_2_link"/>
+            <axis xyz="-1 0 0"/>
+            <origin rpy="0 0 3.66519" xyz="0.25158 0.14525 0.1"/>
+        </joint>
+    
+        <link name="wheel_2_link">
+            <visual>
+                <geometry>
+                    <mesh filename="$(arg bmm3_robot_meshes)/meshes/wheel.dae"/>
+                </geometry>
+            </visual>
+            <collision>
+                <geometry>
+                    <sphere radius="0.10"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <mass value="10"/>
+                <inertia ixx="0.04" ixy="0" ixz="0" iyy="0.04" iyz="0" izz="0.04"/>
+            </inertial>
+        </link>
+    
+        <joint name="motor_3" type="continuous">
+            <parent link="${prefix}base_link"/>
+            <child link="wheel_3_link"/>
+            <axis xyz="-1 0 0"/>
+            <origin rpy="0 0 5.75959" xyz="-0.25158 0.14525 0.1"/>
+        </joint>
+    
+        <link name="wheel_3_link">
+            <visual>
+                <geometry>
+                    <mesh filename="$(arg bmm3_robot_meshes)/meshes/wheel.dae"/>
+                </geometry>
+            </visual>
+            <collision>
+                <geometry>
+                    <sphere radius="0.10"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <mass value="10"/>
+                <inertia ixx="0.04" ixy="0" ixz="0" iyy="0.04" iyz="0" izz="0.04"/>
+            </inertial>
+        </link>
+
+  </xacro:macro>
+
+</robot>

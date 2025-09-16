@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="madar_dual_arm">
+
+    
+    <!-- BMM3 PLATFORM -->
+    <xacro:arg name="bmm_description_path" default="./../../robot_descriptions/bmm"/>
+    <xacro:include filename="$(arg bmm_description_path)/bmm3_platform_macro.xacro" />
+
+    <xacro:bmm3_robot
+        prefix="madar_"
+        >
+    </xacro:bmm3_robot>
+
+
+    <!-- UR5 ARMS -->
+    <xacro:arg name="ur_description_path" default="./../../robot_descriptions/UR"/>
+    <xacro:include filename="$(arg ur_description_path)/ur_macro.xacro" />
+    <xacro:arg name="ur_type" default="ur5"/>
+    <xacro:arg name="joint_limit_params" default="$(arg ur_description_path)/config/$(arg ur_type)/joint_limits.yaml"/>
+    <xacro:arg name="kinematics_params" default="$(arg ur_description_path)/config/$(arg ur_type)/default_kinematics.yaml"/>
+    <xacro:arg name="physical_params" default="$(arg ur_description_path)/config/$(arg ur_type)/physical_parameters.yaml"/>
+    <xacro:arg name="visual_params" default="$(arg ur_description_path)/config/$(arg ur_type)/visual_parameters.yaml"/>
+    <xacro:arg name="safety_limits" default="false"/>
+    <xacro:arg name="safety_pos_margin" default="0.15"/>
+    <xacro:arg name="safety_k_position" default="20"/>
+    <xacro:arg name="force_abs_paths" default="true" />
+
+
+    <!-- ARM RIGHT -->
+    <xacro:ur_robot
+        name="arm_right"
+        tf_prefix="arm_right_"
+        parent="madar_base_link"
+        joint_limits_parameters_file="$(arg joint_limit_params)"
+        kinematics_parameters_file="$(arg kinematics_params)"
+        physical_parameters_file="$(arg physical_params)"
+        visual_parameters_file="$(arg visual_params)"
+        safety_limits="$(arg safety_limits)"
+        safety_pos_margin="$(arg safety_pos_margin)"
+        safety_k_position="$(arg safety_k_position)"
+        force_abs_paths="$(arg force_abs_paths)"
+        >
+        <!-- position robot in the parent reference -->
+        <origin rpy="0.000 ${3*pi/4} 0.000" xyz="0.256 0.000 1.389" />  <!-- ARM_RIGHT_BASE_LINK -->
+    </xacro:ur_robot>
+
+    
+    <!-- ARM LEFT -->
+    <xacro:ur_robot
+        name="arm_left"
+        tf_prefix="arm_left_"
+        parent="madar_base_link"
+        joint_limits_parameters_file="$(arg joint_limit_params)"
+        kinematics_parameters_file="$(arg kinematics_params)"
+        physical_parameters_file="$(arg physical_params)"
+        visual_parameters_file="$(arg visual_params)"
+        safety_limits="$(arg safety_limits)"
+        safety_pos_margin="$(arg safety_pos_margin)"
+        safety_k_position="$(arg safety_k_position)"
+        force_abs_paths="$(arg force_abs_paths)"
+        >
+        <!-- position robot in the parent reference -->
+        <origin rpy="0.000 ${-3*pi/4} 0.000" xyz="-0.256 0.000 1.389" />  <!-- ARM_LEFT_BASE_LINK -->
+    </xacro:ur_robot>
+
+
+</robot>

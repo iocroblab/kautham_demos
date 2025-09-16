@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="madar_dual_manipulator">
+
+    
+    <!-- BMM3 PLATFORM -->
+    <xacro:arg name="bmm_description_path" default="./../../robot_descriptions/bmm"/>
+    <xacro:include filename="$(arg bmm_description_path)/bmm3_platform_macro.xacro" />
+
+    <xacro:bmm3_robot
+        prefix="madar_"
+        >
+    </xacro:bmm3_robot>
+
+
+    <!-- UR5 ARMS -->
+    <xacro:arg name="ur_description_path" default="./../../robot_descriptions/UR"/>
+    <xacro:include filename="$(arg ur_description_path)/ur_macro.xacro" />
+    <xacro:arg name="ur_type" default="ur5"/>
+    <xacro:arg name="joint_limit_params" default="$(arg ur_description_path)/config/$(arg ur_type)/joint_limits.yaml"/>
+    <xacro:arg name="kinematics_params" default="$(arg ur_description_path)/config/$(arg ur_type)/default_kinematics.yaml"/>
+    <xacro:arg name="physical_params" default="$(arg ur_description_path)/config/$(arg ur_type)/physical_parameters.yaml"/>
+    <xacro:arg name="visual_params" default="$(arg ur_description_path)/config/$(arg ur_type)/visual_parameters.yaml"/>
+    <xacro:arg name="safety_limits" default="false"/>
+    <xacro:arg name="safety_pos_margin" default="0.15"/>
+    <xacro:arg name="safety_k_position" default="20"/>
+    <xacro:arg name="force_abs_paths" default="true" />
+
+
+    <!-- ARM RIGHT -->
+    <xacro:arg name="arm_right_prefix" default="arm_right"/>
+    <xacro:ur_robot
+        name="$(arg arm_right_prefix)"
+        tf_prefix="$(arg arm_right_prefix)_"
+        parent="madar_base_link"
+        joint_limits_parameters_file="$(arg joint_limit_params)"
+        kinematics_parameters_file="$(arg kinematics_params)"
+        physical_parameters_file="$(arg physical_params)"
+        visual_parameters_file="$(arg visual_params)"
+        safety_limits="$(arg safety_limits)"
+        safety_pos_margin="$(arg safety_pos_margin)"
+        safety_k_position="$(arg safety_k_position)"
+        force_abs_paths="$(arg force_abs_paths)"
+        >
+        <!-- position robot in the parent reference -->
+        <origin rpy="0.000 ${3*pi/4} 0.000" xyz="0.256 0.000 1.389" />  <!-- ARM_RIGHT_BASE_LINK -->
+    </xacro:ur_robot>
+
+    
+    <!-- ARM LEFT -->
+    <xacro:arg name="arm_left_prefix" default="arm_left"/>
+    <xacro:ur_robot
+        name="$(arg arm_left_prefix)"
+        tf_prefix="$(arg arm_left_prefix)_"
+        parent="madar_base_link"
+        joint_limits_parameters_file="$(arg joint_limit_params)"
+        kinematics_parameters_file="$(arg kinematics_params)"
+        physical_parameters_file="$(arg physical_params)"
+        visual_parameters_file="$(arg visual_params)"
+        safety_limits="$(arg safety_limits)"
+        safety_pos_margin="$(arg safety_pos_margin)"
+        safety_k_position="$(arg safety_k_position)"
+        force_abs_paths="$(arg force_abs_paths)"
+        >
+        <!-- position robot in the parent reference -->
+        <origin rpy="0.000 ${-3*pi/4} 0.000" xyz="-0.256 0.000 1.389" />  <!-- ARM_LEFT_BASE_LINK -->
+    </xacro:ur_robot>
+
+
+    <!-- ALLEGRO HANDS -->
+    <xacro:property name="hand_adapter_radius"    value="0.035" />      <!-- manually measured -->
+    <xacro:property name="hand_adapter_length"    value="0.045" />      <!-- manually measured -->
+    <xacro:property name="hand_adapter_y_offset"  value="0.01" />      <!-- manually measured -->
+    <xacro:property name="hand_adapter_z_offset"  value="${(hand_adapter_length/2.0) + 0.095}" />      <!-- manually measured -->
+
+    <xacro:arg name="allegro_hand_description_path" default="./../../robot_descriptions/allegro_hand"/>
+    
+    <!-- HAND RIGHT -->
+    <xacro:arg name="hand_right_prefix" default="hand_right"/>
+
+    <joint name="$(arg hand_right_prefix)_adapter_joint" type="fixed">
+        <origin xyz="0 0 ${hand_adapter_length/2.0}" rpy="0 0 0"/>
+        <parent link="$(arg arm_right_prefix)_wrist_3_link"/>
+        <child link="$(arg hand_right_prefix)_adapter_link"/>
+    </joint>
+
+    <link name="$(arg hand_right_prefix)_adapter_link" >
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <cylinder radius="${hand_adapter_radius}" length="${hand_adapter_length}"/>
+        </geometry>
+        <material name="LightGrey">
+            <color rgba="0.7 0.7 0.7 1.0"/>
+        </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <cylinder radius="${hand_adapter_radius}" length="${hand_adapter_length}"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <xacro:include filename="$(arg allegro_hand_description_path)/rightAllegroHand.urdf.xacro" />
+    <xacro:right_allegro_hand
+        link_prefix="$(arg hand_right_prefix)_"
+        joint_prefix="$(arg hand_right_prefix)_"
+        tip="weiss"
+        parent="$(arg hand_right_prefix)_adapter_link"
+        >
+        <origin xyz="0.0 ${hand_adapter_y_offset} ${hand_adapter_z_offset}" rpy="0.0 0.0 ${pi/2.0}" />
+    </xacro:right_allegro_hand>
+
+    
+    <!-- HAND LEFT -->
+    <xacro:arg name="hand_left_prefix" default="hand_left"/>
+
+    <joint name="$(arg hand_left_prefix)_adapter_joint" type="fixed">
+        <origin xyz="0 0 ${hand_adapter_length/2.0}" rpy="0 0 0"/>
+        <parent link="$(arg arm_left_prefix)_wrist_3_link"/>
+        <child link="$(arg hand_left_prefix)_adapter_link"/>
+    </joint>
+
+    <link name="$(arg hand_left_prefix)_adapter_link" >
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <cylinder radius="${hand_adapter_radius}" length="${hand_adapter_length}"/>
+            </geometry>
+            <material name="LightGrey">
+                <color rgba="0.7 0.7 0.7 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <cylinder radius="${hand_adapter_radius}" length="${hand_adapter_length}"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <xacro:include filename="$(arg allegro_hand_description_path)/leftAllegroHand.urdf.xacro" />
+    <xacro:left_allegro_hand
+        link_prefix="$(arg hand_left_prefix)_"
+        joint_prefix="$(arg hand_left_prefix)_"
+        tip="weiss"
+        parent="$(arg hand_left_prefix)_adapter_link"
+        >
+        <origin xyz="0.0 ${hand_adapter_y_offset} ${hand_adapter_z_offset}" rpy="0.0 0.0 ${pi/2.0}" />
+    </xacro:left_allegro_hand>
+
+
+</robot>

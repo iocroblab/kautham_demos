@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+<Problem name="madar_peginhole_only_arm_left">
+
+    <Robot robot="./robots/robot_instances/MADAR/madar_dual_manipulator.urdf.xacro">
+        <KauthamName name="madar" />
+		<Home TH="1.57" WZ="1.0" WY="0.0" WX="0.0" Z="0.0" Y="0.0" X="0.0" />
+		<Limits name="X" min="-5.0" max="5.0" />
+		<Limits name="Y" min="-5.0" max="5.0" />
+    </Robot>
+
+	<!-- BEGIN: OBSTACLES -->
+	<Obstacle obstacle="./obstacles/iocroblab_stuff/table_995_1195_765/table_995_1195_765.urdf" scale="1.0">
+		<KauthamName name="table" />
+		<Home TH="3.1416" WX="0.0" WY="0.0" WZ="0.0" X="-0.598" Y="0.580" Z="0.000" />
+	</Obstacle>
+	<Obstacle obstacle="./obstacles/cylinders/cylinder_inhole/cylinder_inhole.urdf" scale="1.0">
+		<KauthamName name="cylinder_inhole" />
+		<Home TH="3.1416" WX="0.0" WY="0.0" WZ="0.0" X="0.000" Y="0.240" Z="0.852" />
+	</Obstacle>
+	<Obstacle obstacle="./obstacles/cylinders/cylinder_pegin/cylinder_pegin.urdf" scale="1.0">
+		<KauthamName name="cylinder_pegin" />
+		<Home TH="3.1416" WX="0.0" WY="0.0" WZ="0.0" X="-0.100" Y="0.700" Z="0.770" />
+	</Obstacle>
+	<!-- END: OBSTACLES -->
+
+	<InitialAttachedObstacle robot="madar" link="hand_left_base_link" obstacle="cylinder_inhole"/>
+
+    <Controls robot="./controls/madar_only_arm_left.cntr" />
+
+    <Planner>
+		<Parameters>
+            <Name>omplRRTConnect</Name>
+			<Parameter name="_Max Planning Time">30.0</Parameter>
+			<Parameter name="_Speed Factor">1</Parameter>
+			<Parameter name="Range">0.01</Parameter>
+			<Parameter name="_Simplify Solution">2</Parameter>
+			<Parameter name="_Incremental (0/1)">0</Parameter>
+		</Parameters>
+		<Queries>
+			<Query>
+				<RobotControl name="madar_arm_left_shoulder_pan_joint" 	init="0.461" goal="0.430"/>
+				<RobotControl name="madar_arm_left_shoulder_lift_joint"	init="0.357" goal="0.330"/>
+				<RobotControl name="madar_arm_left_elbow_joint"			init="0.200" goal="0.245"/>
+				<RobotControl name="madar_arm_left_wrist_1_joint" 		init="0.479" goal="0.525"/>
+				<RobotControl name="madar_arm_left_wrist_2_joint" 		init="0.652" goal="0.595"/>
+				<RobotControl name="madar_arm_left_wrist_3_joint" 		init="0.596" goal="0.575"/>
+			</Query>
+		</Queries>
+	</Planner>
+
+</Problem>

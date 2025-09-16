@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<ControlSet>
+
+	<!-- ################################### -->
+	<!-- #### OFFSET DEGREES OF FREEDOM #### -->
+	<!-- ################################### -->
+
+	<Offset>
+
+		<!-- BEGIN: PLATFORM -->
+
+		<DOF robot="madar" name="X" value="0.5" />
+		<DOF robot="madar" name="Y" value="0.5" />
+		<DOF robot="madar" name="Z" value="0.0" />
+        <DOF robot="madar" name="X1" value="0.0"/>
+        <DOF robot="madar" name="X2" value="0.0"/>
+        <DOF robot="madar" name="X3" value="0.75"/>
+
+		<!-- END: PLATFORM -->
+
+
+	</Offset>
+
+
+	<!-- ################################ -->
+	<!-- #### CONTROLLERS : PLATFORM #### -->
+	<!-- ################################ -->
+
+	<!-- BEGIN: PLATFORM -->
+	<Control name="madar_platform_x" eigValue="1.0">
+		<DOF robot="madar" name="X" value="1.0" />
+	</Control>
+
+	<Control name="madar_platform_y" eigValue="1.0">
+		<DOF robot="madar" name="Y" value="1.0" />
+	</Control>
+
+	<Control name="madar_platform_Rz" eigValue="1.0">
+		<DOF robot="madar" name="X3" value="1.0" />
+	</Control>
+	<!-- END: PLATFORM -->
+
+</ControlSet>
