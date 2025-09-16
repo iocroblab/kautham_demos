@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<Problem name="UR3e_FIB_UPC">
+
+	<Robot robot="robots/robot_instances/UR_rg6_gripper/ur3e_rg6_gripper.urdf.xacro" scale="1.0">
+		<KauthamName name="ur3e_rg6_gripper" />
+		<Home TH="1.570796" WZ="1.0" WY="0.0" WX="0.0" Z="0.74" Y="-0.2" X="0.3" />
+	</Robot>
+
+	<Obstacle obstacle="obstacles/fibroblab_stuff/desk/desk.urdf" scale="1.0">
+		<KauthamName name="table" />
+        <Home TH="0.0" WZ="0.0" WY="0.0" WX="0.0" Z="0.0" Y="-0.9" X="-0.8" />
+	</Obstacle>
+
+	<Obstacle obstacle="obstacles/fibroblab_stuff/wall/wall.urdf" scale="1.0">
+		<KauthamName name="wall" />
+        <Home TH="0.0" WZ="0.0" WY="0.0" WX="0.0" Z="1.0" Y="0.0" X="0.0" />
+	</Obstacle>
+
+	<Obstacle obstacle="obstacles/fibroblab_stuff/wood_piece/wood_piece.urdf" scale="1.0">
+		<KauthamName name="wood_piece" />
+        <Home TH="1.570796" WZ="0.0" WY="0.0" WX="0.0" Z="0.76" Y="-0.62" X="0.43" />
+	</Obstacle>
+
+	<Controls robot="./controls/ur3e_rg6_gripper.cntr"/>
+
+	<Planner>
+		<Parameters>
+			<Name>omplRRT</Name>
+			<Parameter name="_Max Planning Time">15.0</Parameter>
+			<Parameter name="_Speed Factor">1</Parameter>
+			<Parameter name="Range">0.02</Parameter>
+			<Parameter name="Goal Bias">0.05</Parameter>
+		</Parameters>
+		<Queries>
+			<Query>
+				<RobotControl name="shoulder_pan_joint" 	init="0.500" goal="0.548"/>
+				<RobotControl name="shoulder_lift_joint"	init="0.375" goal="0.342"/>
+				<RobotControl name="elbow_joint" 			init="0.500" goal="0.326"/>
+				<RobotControl name="wrist_1_joint" 			init="0.375" goal="0.375"/>
+				<RobotControl name="wrist_2_joint" 			init="0.500" goal="0.625"/>
+				<RobotControl name="wrist_3_joint" 			init="0.500" goal="0.550"/>
+				<RobotControl name="gripper_joint" 			init="0.200" goal="0.890"/>
+			</Query>
+		</Queries>
+	</Planner>
+
+</Problem>
