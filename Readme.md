@@ -16,10 +16,6 @@ your_kautham_project
     └── singular_scenario_folder
 
 
-
-
-### Folder Descriptions
-
 - **`your_kautham_project/`**  
   This is the root folder containing all files related to your Kautham project.  
 
@@ -39,7 +35,33 @@ your_kautham_project
 	</Obstacle>
     ```
 
+    *NOTE:* It is possible to add models in different paths to Kautham, but following this repository structure requires the less work and ensures compatibility.
+
   - **`your_scenarios_folder/`**  
     This folder contains one or more subfolders, each representing a distinct scenario in Kautham. A scenario folder defines a specific setup, including its configuration and Kautham Problem files.
 
     It is recommended (though not strictly required) to create a separate scenario folder for each unique combination of robot and environment. Within a scenario, you can include multiple Kautham Problem files to represent different configurations or queries — for example, adding new objects (like a can) or using alternative control files.
+
+    In this repository, two scenarios have been added as examples:
+    
+    - **`tiago_kitchen`**: Example of a Tiago robot in a kitchen scenario. Different Kautham Problem files are included, using different controls (moving only the base, moving only the arm, moving both the base and the arm).
+
+    - **`yumi_tabletop`**: Example of a Yumi robot in a tabletop scenario.
+
+
+
+## Usage
+
+To open the problem files:
+
+- Open the Kautham GUI with `kautham-gui`
+
+- Select File>Open
+
+- Find your scenario folder, and select the appropiate Kautham Problem file.
+
+
+## Troubleshooting
+
+
+In the ETSEIB computer and you have trouble opening .xacro files, make sure that ROS2 has been sourced.
