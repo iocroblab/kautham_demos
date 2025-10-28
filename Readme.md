@@ -30,7 +30,16 @@ your_kautham_project
 
     For detailed recommendations on structuring and referencing model files, see [these instructions](your_kautham_project/models/README.md).
 
-  - **`your_scenarios_folder/`**  
-    This folder contains one or more subfolders, each representing a distinct scenario in Kautham. A scenario folder defines a specific setup, including its configuration and problem files.
+    To access the /obstacles or /robots subfolder from the Kautham Problem files, follow the structure `./obstacles/[rest_of_the_path].urdf`. In the Kautham Problem File, it should look like this:
 
-    It is recommended (though not strictly required) to create a separate scenario folder for each unique combination of robot and environment. Within a scenario, you can include multiple Kautham problem files to represent different configurations or queries — for example, adding new objects (like a can) or using alternative control files.
+    ```xml
+	<Obstacle obstacle="./obstacles/3D-environments/kitchen/kitchen.urdf" scale="1">
+		<KauthamName name="kitchen" />
+		<Home TH="0.0" WZ="0.0" WY="0.0" WX="0.0" Z="0.0" Y="0.0" X="0.0" />
+	</Obstacle>
+    ```
+
+  - **`your_scenarios_folder/`**  
+    This folder contains one or more subfolders, each representing a distinct scenario in Kautham. A scenario folder defines a specific setup, including its configuration and Kautham Problem files.
+
+    It is recommended (though not strictly required) to create a separate scenario folder for each unique combination of robot and environment. Within a scenario, you can include multiple Kautham Problem files to represent different configurations or queries — for example, adding new objects (like a can) or using alternative control files.
