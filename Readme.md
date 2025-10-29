@@ -22,13 +22,13 @@ your_kautham_project
   This is the root folder containing all files related to your Kautham project.  
 
   - **`models/`**  
-    This folder stores all the models that Kautham uses. **Do not rename or move this folder** — Kautham expects it to be located exactly two levels above the `.xml` problem file by default.  
+    This folder stores all the models that Kautham uses. **Do not rename or move this folder** — Kautham expects a `models/` folder to be located two levels above the `.xml` problem file by default if you follow this structture.  
       
     Inside this folder, you can organize models for robots and obstacles however you like, as long as any `.urdf` and `.xacro` files reference the correct relative paths.  
 
     For detailed recommendations on structuring and referencing model files, see [these instructions](your_kautham_project/models/README.md).
 
-    To access the `obstacles/` or `robots/` subfolder from the Kautham Problem files, follow the structure `./obstacles/[rest_of_the_path].urdf`. In the Kautham Problem File, it should look like this:
+    To access the `obstacles/` or `robots/` subfolder from the Kautham Problem files, follow the structure `./[obstacles or robots]/[rest_of_the_path].[urdf or xacro]`. In the Kautham Problem File, it should look like this:
 
     ```xml
 	<Obstacle obstacle="./obstacles/3D-environments/kitchen/kitchen.urdf" scale="1">
