@@ -2,6 +2,8 @@
 
 The purpose of this repository is to propose a Kautham project structure that guarantees it can be opened using the Kautham GUI. The recommended use is to copy this repository in the user's own workspace, and follow its structure by editing and adding their own files. 
 
+**FOLLOWING THIS STRUCTURE IS OPTIONAL BUT RECOMMENDED**. It is possible to use models and other files from different paths in Kautham, but following this repository structure requires the least work and ensures compatibility.
+
 There is **no** Kautham code in this repository, and it requires no installation of any kind. 
 
 
@@ -22,11 +24,11 @@ your_kautham_project
   - **`models/`**  
     This folder stores all the models that Kautham uses. **Do not rename or move this folder** — Kautham expects it to be located exactly two levels above the `.xml` problem file by default.  
       
-    Inside this folder, you can organize models for robots and obstacles however you like, as long as any `.xacro` files reference the correct relative paths.  
+    Inside this folder, you can organize models for robots and obstacles however you like, as long as any `.urdf` and `.xacro` files reference the correct relative paths.  
 
     For detailed recommendations on structuring and referencing model files, see [these instructions](your_kautham_project/models/README.md).
 
-    To access the /obstacles or /robots subfolder from the Kautham Problem files, follow the structure `./obstacles/[rest_of_the_path].urdf`. In the Kautham Problem File, it should look like this:
+    To access the `obstacles/` or `robots/` subfolder from the Kautham Problem files, follow the structure `./obstacles/[rest_of_the_path].urdf`. In the Kautham Problem File, it should look like this:
 
     ```xml
 	<Obstacle obstacle="./obstacles/3D-environments/kitchen/kitchen.urdf" scale="1">
@@ -35,7 +37,9 @@ your_kautham_project
 	</Obstacle>
     ```
 
-    *NOTE:* It is possible to add models in different paths to Kautham, but following this repository structure requires the less work and ensures compatibility.
+    This repository includes a selection of the models and robots that are used for the Kautham demos. The user is encouraged to add their own to add complexity and variety beyond the demo scenarios.
+
+
 
   - **`your_scenarios_folder/`**  
     This folder contains one or more subfolders, each representing a distinct scenario in Kautham. A scenario folder defines a specific setup, including its configuration and Kautham Problem files.
@@ -44,9 +48,9 @@ your_kautham_project
 
     In this repository, two scenarios have been added as examples:
     
-    - **`tiago_kitchen`**: Example of a Tiago robot in a kitchen scenario. Different Kautham Problem files are included, using different controls (moving only the base, moving only the arm, moving both the base and the arm).
+    - **`tiago_kitchen/`**: Example of a Tiago robot in a kitchen scenario. Different Kautham Problem files are included, using different controls (moving only the base, moving only the arm, moving both the base and the arm).
 
-    - **`yumi_tabletop`**: Example of a Yumi robot in a tabletop scenario.
+    - **`yumi_tabletop/`**: Example of a Yumi robot in a tabletop scenario.
 
 
 
