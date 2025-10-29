@@ -9,13 +9,17 @@ There is **no** Kautham code in this repository, and it requires no installation
 
 ## Directory structure
 
+The recommended Kautham project structure is the following: 
 
 your_kautham_project
 ├── models
 │   ├── robots
 │   └── obstacles
 └── your_scenarios_folder
-    └── singular_scenario_folder
+    ├── singular_scenario_folder_a
+    ├── singular_scenario_folder_b
+    └── ...
+    
 
 
 - **`your_kautham_project/`**  
