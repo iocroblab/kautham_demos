@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Config>
+    <Problemfiles>
+        <kautham name="OMPL_RRTConnect_yumi_table_top.xml" />
+        <pddldomain name="ff-domains/manipulationdomain.pddl" />
+        <pddlproblem name="ff-domains/manipulation_problem_cube" />
+    </Problemfiles>
+    <States>
+        <!-- You can set a different instance of the problem by modifying the intial object poses-->
+        <!-- The GraspControls will be to be changed accordingly the new intial object poses-->
+        <!-- (be careful: if the objects change their initial room then also the pddl problem file
+        has to be set accordingly) -->
+        <Initial>
+            <Object name="CUBEA" kthname="cubeA"> 0.515 -0.300 0.250 0 0 0 1 </Object> <!--
+            orientation in axis-angle (vx,vy,vz,theta) like in the kautham problem files-->
+            <Robot name="YUMI" controlfile="controls/yumi.cntr">0.630 0.100 0.200 0.800 0.500 0.500
+                0.500 1.000 0.380 0.100 0.800 0.800 0.500 0.500 0.500 1.000</Robot>
+        </Initial>
+    </States>
+    <Actions>
+        <Pick robot="YUMI" object="CUBEA" region="SHELFA">
+            <Rob> YuMi </Rob>
+            <Obj> cubeA </Obj>
+            <Link> gripper_right_base </Link>
+            <Cont>controls/yumi_arm_right.cntr</Cont>
+            <HomeControls>0.630 0.100 0.200 0.800 0.500 0.500 0.500 1.000</HomeControls> <!--Controls
+            that define the home robot configuration at this 'region'-->
+            <GraspControls grasp="topgrasp">0.350 0.920 0.470 0.440 0.525 0.540 0.430 1.000</GraspControls> <!--Controls
+            that define the grasp configuration'-->
+        </Pick>
+        <Place robot="YUMI" object="CUBEA" region="SHELFB">
+            <Rob> YuMi </Rob>
+            <Obj> cubeA </Obj>
+            <Cont>controls/yumi_arm_right.cntr</Cont>
+            <HomeControls>0.630 0.100 0.200 0.800 0.500 0.500 0.500 1.000</HomeControls>
+            <GraspControls grasp="topgrasp">0.490 0.935 0.520 0.545 0.370 0.590 0.460 1.000</GraspControls>
+        </Place>
+    </Actions>
+</Config>

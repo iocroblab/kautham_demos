@@ -1,0 +1,21 @@
+(define (problem manip_cube)
+
+(:domain manipulation)
+
+(:objects
+    shelfA shelfB - location
+    cubeA - obstacle
+    yumi1 - robot
+    yumi2 - robot
+)
+
+(:init
+    (in cubeA shelfA)
+    (handEmpty)
+)
+
+(:goal
+    (in cubeA shelfB)
+)
+
+)

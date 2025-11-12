@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<Config>
+    <Problemfiles>
+        <kautham name="OMPL_RRTConnect_chess_ur3_gripper_1_simple.xml" />
+        <pddldomain
+            name="ff-domains/chessmanipulationdomain_dummy.pddl" />
+        <pddlproblem
+            name="ff-domains/manipulation_problem_chess_dummy" />
+        <graspit name="" /> <!--leave
+        it empty if no graspit is to be used -->
+    </Problemfiles>
+    <States>
+        <!-- You can set a different instance of the problem by modifying the intial object poses-->
+        <!-- The GraspControls will be to be changed accordingly the new intial object poses-->
+        <!-- (be careful: if the objects change their initial room then also the pddl problem file
+        has to be set accordingly) -->
+        <Initial>
+            <Object name="PAWNB1" kthname="pawnB1"> 0.125 0 0.91 1 0 0 0</Object> <!-- orientation in
+            axis-angle (vx,vy,vz,theta) like in the kautham problem files-->
+            <Robot name="ur3_robotniq_A" controlfile="controls/ur3_robotniq_1.cntr"> 0.662338
+                0.271613 0.760218 0.722817 0.738732 0.659155 0.67609 </Robot>
+        </Initial>
+    </States>
+    <Actions>
+        <Pick robot="UR3A" object="PAWNB1" region="POS1">
+            <Rob> ur3_right </Rob>
+            <Obj> pawnB1 </Obj>
+            <Link> robotiq_85_base_link </Link>
+            <Cont>controls/right_ur3_with_gripper.cntr</Cont>
+            <HomeControls> 0.500 0.375 0.500 0.375 0.500 0.500 0.813 </HomeControls>
+            <GraspControls grasp="topgrasp"> 0.545 0.380 0.835 0.327 0.375 0.425 0.813 </GraspControls>
+        </Pick>
+        <Place robot="UR3A" object="PAWNB1" region="POS2">
+            <Rob> ur3_right </Rob>
+            <Obj> pawnB1 </Obj>
+            <Cont>controls/right_ur3_with_gripper.cntr</Cont>
+            <HomeControls> 0.500 0.375 0.500 0.375 0.500 0.500 0.813 </HomeControls>
+            <GraspControls grasp="topgrasp">0.645 0.380 0.835 0.327 0.375 0.520 0.813 </GraspControls>
+        </Place>
+        <Dummy robot="UR3A" parameter1="D1" parameter2="D2">
+            <Rob> ur3_right </Rob> <!--Optional,
+            but usually needed if the action involves the robot -->
+            <Cont>controls/right_ur3_with_gripper.cntr</Cont> <!--The
+            controls to move the robot if a tag Rob exists -->
+            <DummyTag> Dummy_tag_value </DummyTag> <!-- Enter the tags with the info needed for the
+            action -->
+            <DummyMultiEntryTag multientrytagname="dummy_1"> 1.0 2.0 3.0 </DummyMultiEntryTag> <!--
+            Multy entry tags are also possible -->
+            <DummyMultiEntryTag multientrytagname="dummy_2"> -1.0 -2.0 -3.0 </DummyMultiEntryTag> <!--
+            Multy entry tags are also possible -->
+        </Dummy>
+    </Actions>
+</Config>

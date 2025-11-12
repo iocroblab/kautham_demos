@@ -41,7 +41,7 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             'tamp_config_filename',
-            default_value="OMPL_geometric_demos/Table_Rooms_R2/tampconfig_a.xml",
+            default_value="OMPL_geometric_demos/chess_ur3_robotiq/tampconfig_chess_2_simple.xml",
             description='Launches the ktmpb client with the files set in the tampconfig file.',
         )
     )
@@ -51,8 +51,8 @@ def generate_launch_description():
             'rviz_config_file_path',
             default_value=PathJoinSubstitution([
                     FindPackageShare("ktmpb_demos"),
-                    'OMPL_geometric_demos/Table_Rooms_R2/rviz',
-                    'kautham_table_rooms_r2.rviz'
+                    'OMPL_geometric_demos/chess_ur3_robotiq/rviz',
+                    'kautham_chess_2_simple.rviz'
                 ]),
             description='Launches the ktmpb client with the RVIZ configuration file.',
         )
