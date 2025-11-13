@@ -11,6 +11,7 @@ There is **no** Kautham code in this repository, and it requires no installation
 
 The recommended Kautham project structure is the following: 
 
+```text
 your_kautham_project
 ├── models
 │   ├── robots
@@ -19,7 +20,7 @@ your_kautham_project
     ├── singular_scenario_folder_a (e.g. YuMi tabletop)
     ├── singular_scenario_folder_b (e.g. Tiago Kitchen)
     └── ...
-    
+```
 
 
 - **`your_kautham_project/`**  
