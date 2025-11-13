@@ -30,7 +30,7 @@ your_kautham_project
 
     Inside this folder, you can organize models for robots and obstacles however you like, as long as any `.urdf` and `.xacro` files reference the correct relative paths.  
 
-    For detailed recommendations on structuring and referencing model files, see [these instructions](your_kautham_project/models/README.md).
+    For detailed recommendations on structuring and referencing model files, see [these instructions](https://github.com/iocroblab/kautham_demos/blob/example_branch/kautham_demos/models/README.md).
 
     To access the `obstacles/` or `robots/` subfolder from the Kautham Problem files, follow the structure `/[obstacles or robots]/[rest_of_the_path].[urdf or xacro]`. In the Kautham Problem File, it should look like this:
 
