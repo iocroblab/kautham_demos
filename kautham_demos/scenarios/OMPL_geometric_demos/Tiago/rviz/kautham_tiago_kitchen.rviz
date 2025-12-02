@@ -4,7 +4,7 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
-        - /COKECAN_22
+        - /TF1
       Splitter Ratio: 0.6363636255264282
     Tree Height: 639
   - Class: rviz_common/Selection
@@ -56,6 +56,8 @@ Visualization Manager:
         kthm_cokecan_1_base:
           Value: false
         kthm_cokecan_2_base:
+          Value: false
+        kthm_cube_1_base:
           Value: false
         kthm_glass_1_base:
           Value: false
@@ -147,6 +149,8 @@ Visualization Manager:
           kthm_cokecan_1_base:
             {}
           kthm_cokecan_2_base:
+            {}
+          kthm_cube_1_base:
             {}
           kthm_glass_1_base:
             {}
@@ -559,6 +563,37 @@ Visualization Manager:
       Update Interval: 0
       Value: true
       Visual Enabled: true
+    - Alpha: 1
+      Class: rviz_default_plugins/RobotModel
+      Collision Enabled: false
+      Description File: ""
+      Description Source: Topic
+      Description Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /kthm/cube_1/robot_description
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        kthm_cube_1_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Mass Properties:
+        Inertia: false
+        Mass: false
+      Name: CUBE_1
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -605,25 +640,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 9.116988182067871
+      Distance: 4.811325550079346
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.28732845187187195
-        Y: -0.6347151398658752
-        Z: 1.3554511070251465
+        X: -0.37230661511421204
+        Y: 1.041340708732605
+        Z: 2.5657458305358887
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.37039822340011597
+      Pitch: 0.49539822340011597
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.833569526672363
+      Yaw: 5.843571186065674
     Saved: ~
 Window Geometry:
   Displays:
