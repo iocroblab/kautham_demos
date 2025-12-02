@@ -77,8 +77,8 @@
 
                 <RobotControl name="gripper_finger_joint" init="1.000" goal="1.000" />
 
-                <RobotControl name="head_1_joint" init="0.200" goal="0.800" />
-                <RobotControl name="head_2_joint" init="0.200" goal="0.800" />
+                <RobotControl name="head_1_joint" init="0.500" goal="0.800" />
+                <RobotControl name="head_2_joint" init="0.500" goal="0.800" />
 
             </Query>
         </Queries>
