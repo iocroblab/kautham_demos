@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Config>
+    <Problemfiles>
+        <kautham name="tiago_kitchen_scenario.xml" />
+        <pddldomain name="ff-domains/manipulationdomain.pddl" />
+        <pddlproblem name="ff-domains/manipulation_problem_redcan" />
+        <graspit name="" /> <!--leave
+        it empty if no graspit is to be used -->
+    </Problemfiles>
+    <States>
+        <!-- You can set a different instance of the problem by modifying the intial object poses-->
+        <!-- The GraspControls will be to be changed accordingly the new intial object poses-->
+        <!-- (be careful: if the objects change their initial room then also the pddl problem file
+        has to be set accordingly) -->
+        <Initial>
+            <Object name="REDCAN" kthname="cokecan_2"> 1.170 -0.400 0.910 0 0 0 1</Object> <!--
+            orientation in axis-angle (vx,vy,vz,theta) like in the kautham problem files-->
+            <Robot name="TIAGO" controlfile="controls/tiago_only_mobile.cntr"> 0.700 0.300 0.250 </Robot>
+        </Initial>
+    </States>
+    <Actions>
+        <Pick robot="TIAGO" object="REDCAN" region="COUNTERA">
+            <Rob> tiago </Rob>
+            <Obj> cokecan_2 </Obj>
+            <Link> gripper_link </Link>
+            <Cont>controls/tiago_torso_arm_gripper_counterA.cntr</Cont>
+            <HomeControls>0.200 0.020 0.590 0.690 0.750 0.150 0.960 0.500 1.000</HomeControls>
+            <GraspControls grasp="topgrasp">0.900 0.500 0.930 0.620 0.570 0.825 0.110 0.500 1.000</GraspControls>
+        </Pick>
+        <Place robot="TIAGO" object="REDCAN" region="COUNTERB">
+            <Rob> tiago </Rob>
+            <Obj> cokecan_2 </Obj>
+            <Cont>controls/tiago_torso_arm_gripper_counterB.cntr</Cont>
+            <HomeControls> 0.200 0.020 0.590 0.690 0.750 0.150 0.960 0.500 1.000</HomeControls>
+            <GraspControls grasp="topgrasp">0.900 0.500 0.930 0.620 0.570 0.825 0.110 0.500 1.000</GraspControls>
+        </Place>
+        <Move robot="TIAGO" region_from="COUNTERA" region_to="COUNTERB">
+            <Rob> tiago </Rob>
+            <Cont>controls/tiago_only_mobile.cntr</Cont>
+            <InitControls> 0.700 0.300 0.250</InitControls>
+            <GoalControls> 0.475 0.550 0.500</GoalControls>
+        </Move>
+    </Actions>
+</Config>
