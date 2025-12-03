@@ -47,7 +47,7 @@
     <Planner>
         <Parameters>
             <Name>omplRRTConnect</Name>
-            <Parameter name="_Max Planning Time">60</Parameter>
+            <Parameter name="_Max Planning Time">15</Parameter>
             <Parameter name="Range">0.1</Parameter>
             <Parameter name="_Path Drawn (0/1)">0</Parameter>
             <Parameter name="_Simplify Solution">2</Parameter>

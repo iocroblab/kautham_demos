@@ -15,7 +15,7 @@
 				<!-- <mesh filename="cokecan.dae" scale="0.254 0.254 0.254" /> -->
 				<!--cylinder
 				length="0.11" radius="0.035"/-->
-				<cylinder length="0.5" radius="0.3" />
+				<cylinder length="1" radius="0.5" />
 
 			</geometry>
 
@@ -25,7 +25,7 @@
 			<!-- <origin xyz="0.0 0.0 0.059" rpy="0 0 0"/> -->
 			<geometry>
 				<!-- <mesh filename="cokecan.stl" scale="0.254 0.254 0.254" /> -->
-				<cylinder length="0.5" radius="0.3" />
+				<cylinder length="1" radius="0.5" />
 			</geometry>
 		</collision>
 	</link>

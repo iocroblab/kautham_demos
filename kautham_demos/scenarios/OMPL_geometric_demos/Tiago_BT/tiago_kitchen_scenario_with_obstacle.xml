@@ -27,6 +27,12 @@
         <Home TH="0.0" WZ="0.0" WY="0.0" WX="0.0" Z="0.25" Y="0" X="2.5" />
     </Obstacle>
 
+    <Obstacle obstacle="/obstacles/kitchen_stuff/cokecan/big_can.urdf" scale="1">
+        <KauthamName name="cube_2" />
+        <Home TH="0.0" WZ="0.0" WY="0.0" WX="0.0" Z="0.25" Y="1" X="2.5" />
+    </Obstacle>
+
+
     <!-- KITCHEN STUFF -->
     <Obstacle obstacle="/obstacles/kitchen_stuff/glass/glass.urdf" scale="1">
         <KauthamName name="glass_1" />
@@ -53,7 +59,7 @@
     <Planner>
         <Parameters>
             <Name>omplRRTConnect</Name>
-            <Parameter name="_Max Planning Time">60</Parameter>
+            <Parameter name="_Max Planning Time">15</Parameter>
             <Parameter name="Range">0.1</Parameter>
             <Parameter name="_Path Drawn (0/1)">0</Parameter>
             <Parameter name="_Simplify Solution">2</Parameter>

@@ -4,8 +4,6 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
-        - /TF1
-        - /CUBE_11
         - /Marker1
       Splitter Ratio: 0.6363636255264282
     Tree Height: 595
@@ -60,6 +58,8 @@ Visualization Manager:
         kthm_cokecan_2_base:
           Value: false
         kthm_cube_1_base:
+          Value: false
+        kthm_cube_2_base:
           Value: false
         kthm_glass_1_base:
           Value: false
@@ -153,6 +153,8 @@ Visualization Manager:
           kthm_cokecan_2_base:
             {}
           kthm_cube_1_base:
+            {}
+          kthm_cube_2_base:
             {}
           kthm_glass_1_base:
             {}
@@ -596,6 +598,37 @@ Visualization Manager:
       Update Interval: 0
       Value: true
       Visual Enabled: true
+    - Alpha: 1
+      Class: rviz_default_plugins/RobotModel
+      Collision Enabled: false
+      Description File: ""
+      Description Source: Topic
+      Description Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /kthm/cube_2/robot_description
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        kthm_cube_2_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Mass Properties:
+        Inertia: false
+        Mass: false
+      Name: CUBE_2
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
     - Class: rviz_default_plugins/Marker
       Enabled: true
       Name: Marker
@@ -671,10 +704,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.545397937297821
+      Pitch: 0.880397617816925
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.773567199707031
+      Yaw: 5.0135626792907715
     Saved: ~
 Window Geometry:
   Displays:
