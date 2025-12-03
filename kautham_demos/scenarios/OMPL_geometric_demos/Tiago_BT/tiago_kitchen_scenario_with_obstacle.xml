@@ -24,7 +24,7 @@
 
     <Obstacle obstacle="/obstacles/kitchen_stuff/cokecan/big_can.urdf" scale="1">
         <KauthamName name="cube_1" />
-        <Home TH="0.0" WZ="0.0" WY="0.0" WX="0.0" Z="0.25" Y="0" X="0" />
+        <Home TH="0.0" WZ="0.0" WY="0.0" WX="0.0" Z="0.25" Y="0" X="2.5" />
     </Obstacle>
 
     <!-- KITCHEN STUFF -->
